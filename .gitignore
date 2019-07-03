@@ -12,3 +12,4 @@ source/
 themes/
 yarn.lock
 docs/
+commit.sh
