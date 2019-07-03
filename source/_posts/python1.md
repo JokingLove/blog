@@ -1,5 +1,6 @@
 ---
 title: python 学习笔记1
+date: 2018-07-22
 categories: IT
 tags: python
 ---

@@ -83,30 +83,30 @@ cover:
 
 # 桌面端导航栏菜单
 menu_desktop:
-  - name: 示例
-    icon: fas fa-grin
+  - name: 主页
+    icon: fas fa-home
     url: /
   - name: 分类
     icon: fas fa-folder-open
-    url: blog/categories/
+    url: categories/
     rel: nofollow
   - name: 标签
     icon: fas fa-hashtag
-    url: blog/tags/
+    url: tags/
     rel: nofollow
   - name: 归档
     icon: fas fa-archive
-    url: blog/archives/
+    url: archives/
     rel: nofollow
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
   - name: 近期文章
-    icon: fas fa-clock
+    icon: fas fa-click fa-fw
     url: /
   - name: 文章归档
     icon: fas fa-archive
-    url: blog/archives/
+    url: archives/
     rel: nofollow
   - name: 开源项目
     icon: fas fa-code-branch
@@ -137,7 +137,7 @@ body: [article, comments]
 # 侧边栏小部件，默认按下面给定的顺序全部显示，文章中还可以自定义显示一部分以及顺序
 sidebar:
   - widget: author
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+    avatar: https://avatars2.githubusercontent.com/u/18134074?s=460&v=4
     social: true
   - widget: toc
   - widget: grid
@@ -243,21 +243,21 @@ share:
 
 ############################### 杂项，请勿删除 ###############################
 #valine配置
-valine:
-  enable: true # 如果你想用Valine评论系统，请设置enable为true
-  volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
+# valine:
+#   enable: true # 如果你想用Valine评论系统，请设置enable为true
+#   volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
   # 还需要在根目录配置文件中添加下面这三行内容
   # leancloud:
   #   app_id: 你的appId
   #   app_key: 你的appKey
-  guest_info: nick,mail,link #valine comment header info
-  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
-  avatar: mp # gravatar style https://valine.js.org/avatar
-  pageSize: 10 # comment list page size
-  verify: true # valine verify code (true/false)
-  notify: true # valine mail notify (true/false)
-  lang: zh-cn
-  highlight: true
+  # guest_info: nick,mail,link #valine comment header info
+  # placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+  # avatar: mp # gravatar style https://valine.js.org/avatar
+  # pageSize: 10 # comment list page size
+  # verify: true # valine verify code (true/false)
+  # notify: true # valine mail notify (true/false)
+  # lang: zh-cn
+  # highlight: true
 
 # 搜索配置
 search:

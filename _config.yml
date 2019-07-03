@@ -20,7 +20,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -80,22 +80,14 @@ theme: material-x
 deploy:
   type:
 
+# 评论系统
+gitalk: 
+  clientID: Iv1.4968518393d3b9f1
+  clientSecret: ad03ce244f26e942defd4a4918834ac65333a981
+  repo: site_comments
+  owner: JokingLove
+  admin: ['JokingLove'] 
 
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true
+# 百度统计
+baidu_analytics_key: 1eb8a2c234ac5bf6db839a19e3fbb5ee
+

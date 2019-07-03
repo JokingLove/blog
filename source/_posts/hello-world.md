@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2016-02-15
 categories: 其他
 tags: hexo
 ---
