@@ -702,20 +702,18 @@
 (function(){
   var href = window.location.href;
   var hrefArr = href.split('/');
-  if(hrefArr.indexOf('categories') > -1) {
+  if(hrefArr.includes('categories')) {
     // 给 ”分类“ 添加背景色
     document.getElementById('bloggroupcategories').classList.add('category_active')
     var hrefArrRev = hrefArr.reverse();
-    var category = hrefArrRev.shift();
-    if(!category) {
-      category = hrefArrRev.shift();
-      var aCategories = document.querySelectorAll('.category ul li a');
-      aCategories.forEach(item => {
-        if(href.indexOf(item.href) > -1) {
-          item.classList.add('category_item_active')
-        }
-      })
-    }
+    var categoryItem = '';
+    for(; !categoryItem; categoryItem = hrefArrRev.shift());
+    var aCategories = document.querySelectorAll('.category ul li a');
+    aCategories.forEach(item => {
+      if(decodeURI(categoryItem) == item.firstChild.innerHTML) {  
+        item.classList.add('category_item_active')
+      }
+    })
   }
 })();
 </script>
