@@ -6,6 +6,7 @@
   
   <title>关于 | JOKING</title>
   
+  
   <meta name="keywords" content="blog,joking,博客，programmer">
   
   
@@ -416,6 +417,8 @@
             rel="nofollow"
           
           
+            target="_blank"
+          
           id="https:xaoxuu.comwikimaterial-x">
           
             <i class="fas fa-book fa-fw" aria-hidden="true"></i>
@@ -609,6 +612,8 @@
             rel="nofollow"
           
           
+            target="_blank"
+          
           id="https:xaoxuu.comwikimaterial-x">
           
             <i class="fas fa-book fa-fw" aria-hidden="true"></i>
@@ -683,7 +688,7 @@
   <section class='widget tagcloud'>
     
 <header class='pure'>
-  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;云标签</div>
   
     <a class="rightBtn"
     
@@ -935,6 +940,14 @@
       language: 'zh-CN'
     });
     gitalk.render('gitalk-container');
+    // gitalk 没有提供  placeholder 功能，所以就自己写喽
+    
+      var interval = setInterval(() => {
+        console.log(document.querySelector('#comments #gitalk-container textarea'))
+        document.querySelector('#comments #gitalk-container textarea').setAttribute('placeholder', 'What?')
+      }, 5000)
+      clearInterval(interval)
+    
   </script>
 
 
@@ -1057,7 +1070,7 @@
 
 
 
-
+<!-- 粒子效果 -->
 
   <div id="particles"></div>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
