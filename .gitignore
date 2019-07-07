@@ -7,4 +7,9 @@ public/
 .deploy*/
 docs/
 *.sh
+scaffolds/
+package*
+*.lock
+*.yml
+source/
 themes/
