@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jokinglove.com/blog/"/>
-  <updated>2019-07-09T08:48:13.208Z</updated>
+  <updated>2019-07-09T09:10:47.457Z</updated>
   <id>https://jokinglove.com/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/"/>
     <id>https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/</id>
     <published>2019-06-24T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.208Z</updated>
+    <updated>2019-07-09T09:10:47.457Z</updated>
     
     <summary type="html">
     
@@ -47,11 +47,13 @@
     <link href="https://jokinglove.com/blog/2019/06/14/kubernates/4.1%E5%88%9B%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/</id>
     <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.203Z</updated>
+    <updated>2019-07-09T09:10:47.451Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;使用-Minikube-创建一个集群&quot;&gt;&lt;a href=&quot;#使用-Minikube-创建一个集群&quot; class=&quot;headerlink&quot; title=&quot;使用 Minikube 创建一个集群&quot;&gt;&lt;/a&gt;使用 Minikube 创建一个集群&lt;/h2&gt;&lt;h4 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h4&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;使用-minikube-创建一个集群&quot;&gt;使用 Minikube 创建一个集群&lt;/h2&gt;
+&lt;h4 id=&quot;目标&quot;&gt;目标&lt;/h4&gt;
+&lt;ul&gt;
 &lt;li&gt;了解什么是 Kubernetes 集群&lt;/li&gt;
 &lt;li&gt;了解什么是 Minikube&lt;/li&gt;
 &lt;li&gt;使用在线终端启动 Kubernetes 集群&lt;/li&gt;
@@ -75,11 +77,12 @@
     <link href="https://jokinglove.com/blog/2019/06/12/kubernates/4.2%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     <id>https://jokinglove.com/blog/2019/06/12/kubernates/4.2操作练习/</id>
     <published>2019-06-11T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.203Z</updated>
+    <updated>2019-07-09T09:10:47.451Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;实操练习&quot;&gt;&lt;a href=&quot;#实操练习&quot; class=&quot;headerlink&quot; title=&quot;实操练习&quot;&gt;&lt;/a&gt;实操练习&lt;/h3&gt;&lt;hr&gt;
+      &lt;h3 id=&quot;实操练习&quot;&gt;实操练习&lt;/h3&gt;
+&lt;hr&gt;
 &lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Kubernetes Bootcamp Terminal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ minikube version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;minikube version: v0.34.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ minikube start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;o   minikube v0.34.1 on linux (amd64)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;   Configuring &lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt; host environment ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;   Creating none VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   &lt;span class=&quot;string&quot;&gt;&quot;minikube&quot;&lt;/span&gt; IP address is 172.17.0.7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Configuring Docker as the container runtime ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Preparing Kubernetes environment ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@   Downloading kubeadm v1.13.3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@   Downloading kubelet v1.13.3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Pulling images required by Kubernetes v1.13.3 ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Launching Kubernetes v1.13.3 using kubeadm ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Configuring cluster permissions ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-   Verifying component health .....&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+   kubectl is now configured to use &lt;span class=&quot;string&quot;&gt;&quot;minikube&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;=   Done! Thank you &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; using minikube!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ kubectl version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Client Version: version.Info&amp;#123;Major:&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;, Minor:&lt;span class=&quot;string&quot;&gt;&quot;13&quot;&lt;/span&gt;, GitVersion:&lt;span class=&quot;string&quot;&gt;&quot;v1.13.3&quot;&lt;/span&gt;, GitCommit:&lt;span class=&quot;string&quot;&gt;&quot;721bfa751924da8d1680787490c54b9179b1fed0&quot;&lt;/span&gt;, GitTreeState:&lt;span class=&quot;string&quot;&gt;&quot;clean&quot;&lt;/span&gt;, BuildDate:&lt;span class=&quot;string&quot;&gt;&quot;2019-02-01T20:08:12Z&quot;&lt;/span&gt;, GoVersion:&lt;span class=&quot;string&quot;&gt;&quot;go1.11.5&quot;&lt;/span&gt;, Compiler:&lt;span class=&quot;string&quot;&gt;&quot;gc&quot;&lt;/span&gt;, Platform:&lt;span class=&quot;string&quot;&gt;&quot;linux/amd64&quot;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Server Version: version.Info&amp;#123;Major:&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;, Minor:&lt;span class=&quot;string&quot;&gt;&quot;13&quot;&lt;/span&gt;, GitVersion:&lt;span class=&quot;string&quot;&gt;&quot;v1.13.3&quot;&lt;/span&gt;, GitCommit:&lt;span class=&quot;string&quot;&gt;&quot;721bfa751924da8d1680787490c54b9179b1fed0&quot;&lt;/span&gt;, GitTreeState:&lt;span class=&quot;string&quot;&gt;&quot;clean&quot;&lt;/span&gt;, BuildDate:&lt;span class=&quot;string&quot;&gt;&quot;2019-02-01T20:00:57Z&quot;&lt;/span&gt;, GoVersion:&lt;span class=&quot;string&quot;&gt;&quot;go1.11.5&quot;&lt;/span&gt;, Compiler:&lt;span class=&quot;string&quot;&gt;&quot;gc&quot;&lt;/span&gt;, Platform:&lt;span class=&quot;string&quot;&gt;&quot;linux/amd64&quot;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ kubectl cluster-info&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Kubernetes master is running at https://172.17.0.7:8443&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;KubeDNS is running at https://172.17.0.7:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;To further debug and diagnose cluster problems, use &lt;span class=&quot;string&quot;&gt;&#39;kubectl cluster-info dump&#39;&lt;/span&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ kubectl get nodes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;NAME       STATUS   ROLES    AGE    VERSION&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;minikube   Ready    master   100s   v1.13.3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -98,11 +101,12 @@
     <link href="https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux常用命令/</id>
     <published>2019-06-10T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.207Z</updated>
+    <updated>2019-07-09T09:10:47.456Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Linux-实用命令&quot;&gt;&lt;a href=&quot;#Linux-实用命令&quot; class=&quot;headerlink&quot; title=&quot;Linux 实用命令&quot;&gt;&lt;/a&gt;Linux 实用命令&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;linux-实用命令&quot;&gt;Linux 实用命令&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;awk&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -123,22 +127,29 @@
     <link href="https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97/"/>
     <id>https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes的基础模块/</id>
     <published>2019-06-09T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.203Z</updated>
+    <updated>2019-07-09T09:10:47.451Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Kubernetes-的基础模块&quot;&gt;&lt;a href=&quot;#Kubernetes-的基础模块&quot; class=&quot;headerlink&quot; title=&quot;Kubernetes 的基础模块&quot;&gt;&lt;/a&gt;Kubernetes 的基础模块&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/cluster-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;创建一个 Kubernetes 集群&lt;/a&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;kubernetes-的基础模块&quot;&gt;Kubernetes 的基础模块&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/cluster-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;创建一个 Kubernetes 集群&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/deploy-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;部署应用程序&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/deploy-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;部署应用程序&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/explore-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用程序探索&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/explore-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用程序探索&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/expose-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用外部可见&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/expose-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用外部可见&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/scale-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用可扩展&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/scale-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用可扩展&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/update-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用更新&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/update-intro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;应用更新&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
     
@@ -158,11 +169,12 @@
     <link href="https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/"/>
     <id>https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/</id>
     <published>2019-06-01T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.203Z</updated>
+    <updated>2019-07-09T09:10:47.451Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Kubernetes-设计架构&quot;&gt;&lt;a href=&quot;#Kubernetes-设计架构&quot; class=&quot;headerlink&quot; title=&quot;Kubernetes 设计架构&quot;&gt;&lt;/a&gt;Kubernetes 设计架构&lt;/h2&gt;&lt;p&gt;Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。&lt;/p&gt;
+      &lt;h2 id=&quot;kubernetes-设计架构&quot;&gt;Kubernetes 设计架构&lt;/h2&gt;
+&lt;p&gt;Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190604094531.png&quot; alt=&quot;架构图&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.2/docs/design/architecture.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;查看高清无码图&lt;/a&gt;&lt;/p&gt;
     
@@ -182,17 +194,20 @@
     <link href="https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-%E8%AE%A4%E8%AF%86%20Kubernetes/"/>
     <id>https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-认识 Kubernetes/</id>
     <published>2019-05-30T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.203Z</updated>
+    <updated>2019-07-09T09:10:47.451Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;认识-Kubernetes？&quot;&gt;&lt;a href=&quot;#认识-Kubernetes？&quot; class=&quot;headerlink&quot; title=&quot;认识 Kubernetes？&quot;&gt;&lt;/a&gt;认识 Kubernetes？&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#tedian&quot;&gt; Kubernetes 具有如下特点：&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;认识-kubernetes？&quot;&gt;认识 Kubernetes？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;#tedian&quot;&gt; Kubernetes 具有如下特点：&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;准备好 开始?&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href&gt;为什么是容器？&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href&gt;为什么是容器？&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;为什么我们需要 Kubernetes，它能做什么？&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;为什么 Kubernetes 是一个平台？&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -227,16 +242,17 @@
     <link href="https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-%E6%A6%82%E5%BF%B5/"/>
     <id>https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/</id>
     <published>2019-05-27T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.202Z</updated>
+    <updated>2019-07-09T09:10:47.450Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。&lt;/p&gt;
+      &lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
+&lt;p&gt;概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#概述&quot;&gt;&lt;strong&gt;概述&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%A6%82%E8%BF%B0&quot;&gt;&lt;strong&gt;概述&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[ &lt;strong&gt;Kubernetes 对象&lt;/strong&gt; ](# Kubernetes 对象)&lt;/li&gt;
 &lt;li&gt;[&lt;strong&gt;Kubernetes 控制面&lt;/strong&gt;](#Kubernetes 控制面)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#接下来&quot;&gt;&lt;strong&gt;接下来&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8E%A5%E4%B8%8B%E6%9D%A5&quot;&gt;&lt;strong&gt;接下来&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -255,11 +271,12 @@
     <link href="https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/"/>
     <id>https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/</id>
     <published>2019-05-18T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.207Z</updated>
+    <updated>2019-07-09T09:10:47.456Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;​
+      &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;​&lt;br&gt;
 &lt;strong&gt;Apache Kafka 是一个分布式流处理平台。这到底意味着什么呢？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;流处理平台的三种特性：&lt;/p&gt;
 &lt;ol&gt;
@@ -292,17 +309,18 @@
     <link href="https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/</id>
     <published>2019-05-16T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.205Z</updated>
+    <updated>2019-07-09T09:10:47.453Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;MongoDb-常用方法&quot;&gt;&lt;a href=&quot;#MongoDb-常用方法&quot; class=&quot;headerlink&quot; title=&quot;MongoDb 常用方法&quot;&gt;&lt;/a&gt;MongoDb 常用方法&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;$regx: 值匹配&lt;/p&gt;
+      &lt;h3 id=&quot;mongodb-常用方法&quot;&gt;MongoDb 常用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$regx: 值匹配&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; &amp;lt;field&amp;gt;: &amp;#123; &lt;span class=&quot;variable&quot;&gt;$regex&lt;/span&gt;: /pattern/, &lt;span class=&quot;variable&quot;&gt;$options&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;options&amp;gt;&#39;&lt;/span&gt; &amp;#125; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; &amp;lt;field&amp;gt;: &amp;#123; &lt;span class=&quot;variable&quot;&gt;$regex&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;pattern&#39;&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;$options&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;options&amp;gt;&#39;&lt;/span&gt; &amp;#125; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; &amp;lt;field&amp;gt;: &amp;#123; &lt;span class=&quot;variable&quot;&gt;$regex&lt;/span&gt;: /pattern/&amp;lt;options&amp;gt; &amp;#125; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 &lt;p&gt;$options:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;i：    忽略大小写&lt;/li&gt;
+&lt;li&gt;i：	忽略大小写&lt;/li&gt;
 &lt;li&gt;m： For patterns that include anchors (i.e. &lt;code&gt;^&lt;/code&gt; for the start, &lt;code&gt;$&lt;/code&gt; for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. &lt;code&gt;\n&lt;/code&gt;), the &lt;code&gt;m&lt;/code&gt; option has no effect.（对于新的一行，m是不起作用的）&lt;/li&gt;
 &lt;li&gt;x：“Extended” capability to ignore all white space characters in the &lt;a href=&quot;https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;code&gt;$regex&lt;/code&gt;&lt;/a&gt;pattern unless escaped or included in a character class.&lt;/li&gt;
 &lt;li&gt;Allows the dot character (i.e. &lt;code&gt;.&lt;/code&gt;) to match all characters &lt;em&gt;including&lt;/em&gt; newline characters. For an example, see &lt;a href=&quot;https://docs.mongodb.com/manual/reference/operator/query/regex/#regex-dot-new-line&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Use the . Dot Character to Match New Line&lt;/a&gt;.&lt;/li&gt;
@@ -326,11 +344,13 @@
     <link href="https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/"/>
     <id>https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/</id>
     <published>2019-05-15T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.204Z</updated>
+    <updated>2019-07-09T09:10:47.453Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Mongodb-中两个操作-Reduce-amp-Aggregate&quot;&gt;&lt;a href=&quot;#Mongodb-中两个操作-Reduce-amp-Aggregate&quot; class=&quot;headerlink&quot; title=&quot;Mongodb 中两个操作 Reduce &amp;amp; Aggregate&quot;&gt;&lt;/a&gt;Mongodb 中两个操作 Reduce &amp;amp; Aggregate&lt;/h2&gt;&lt;h3 id=&quot;Map-Reduce&quot;&gt;&lt;a href=&quot;#Map-Reduce&quot; class=&quot;headerlink&quot; title=&quot;Map Reduce&quot;&gt;&lt;/a&gt;Map Reduce&lt;/h3&gt;&lt;p&gt;Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。&lt;/p&gt;
+      &lt;h2 id=&quot;mongodb-中两个操作-reduce-aggregate&quot;&gt;Mongodb 中两个操作 Reduce &amp;amp; Aggregate&lt;/h2&gt;
+&lt;h3 id=&quot;map-reduce&quot;&gt;Map Reduce&lt;/h3&gt;
+&lt;p&gt;Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。&lt;/p&gt;
 &lt;p&gt;MongoDB 提供的 Map-Reduce 非常灵活，对于大规模数据分析也相当实用。&lt;/p&gt;
 &lt;hr&gt;
     
@@ -347,14 +367,15 @@
   
   <entry>
     <title>markdown 常用语法汇总</title>
-    <link href="https://jokinglove.com/blog/2019/05/15/others/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://jokinglove.com/blog/2019/05/15/others/20190605-markdown常用语法/</id>
+    <link href="https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown常用语法/</id>
     <published>2019-05-14T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.204Z</updated>
+    <updated>2019-07-09T09:10:47.459Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;markdown-常用语法汇总&quot;&gt;&lt;a href=&quot;#markdown-常用语法汇总&quot; class=&quot;headerlink&quot; title=&quot;markdown 常用语法汇总&quot;&gt;&lt;/a&gt;markdown 常用语法汇总&lt;/h3&gt;&lt;p&gt;&lt;u&gt;这些字有下划线&lt;/u&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;markdown-常用语法汇总&quot;&gt;markdown 常用语法汇总&lt;/h3&gt;
+&lt;p&gt;&lt;u&gt;这些字有下划线&lt;/u&gt;&lt;/p&gt;
 &lt;p&gt;我有上标&lt;sup&gt;上标&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;我有下标&lt;sub&gt;下标&lt;/sub&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;加粗1&lt;/strong&gt;&lt;/p&gt;
@@ -370,14 +391,15 @@
   
   <entry>
     <title>markdown 常用语法汇总</title>
-    <link href="https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown常用语法/</id>
+    <link href="https://jokinglove.com/blog/2019/05/15/others/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>https://jokinglove.com/blog/2019/05/15/others/20190605-markdown常用语法/</id>
     <published>2019-05-14T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.208Z</updated>
+    <updated>2019-07-09T09:10:47.452Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;markdown-常用语法汇总&quot;&gt;&lt;a href=&quot;#markdown-常用语法汇总&quot; class=&quot;headerlink&quot; title=&quot;markdown 常用语法汇总&quot;&gt;&lt;/a&gt;markdown 常用语法汇总&lt;/h3&gt;&lt;p&gt;&lt;u&gt;这些字有下划线&lt;/u&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;markdown-常用语法汇总&quot;&gt;markdown 常用语法汇总&lt;/h3&gt;
+&lt;p&gt;&lt;u&gt;这些字有下划线&lt;/u&gt;&lt;/p&gt;
 &lt;p&gt;我有上标&lt;sup&gt;上标&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;我有下标&lt;sub&gt;下标&lt;/sub&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;加粗1&lt;/strong&gt;&lt;/p&gt;
@@ -396,18 +418,23 @@
     <link href="https://jokinglove.com/blog/2019/05/14/others/kafka/20190524-spring-kafka/"/>
     <id>https://jokinglove.com/blog/2019/05/14/others/kafka/20190524-spring-kafka/</id>
     <published>2019-05-13T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.206Z</updated>
+    <updated>2019-07-09T09:10:47.455Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Kafka-a-distributed-streaming-platform&quot;&gt;&lt;a href=&quot;#Kafka-a-distributed-streaming-platform&quot; class=&quot;headerlink&quot; title=&quot;Kafka (a distributed streaming platform)&quot;&gt;&lt;/a&gt;Kafka (a distributed streaming platform)&lt;/h2&gt;&lt;h4 id=&quot;Kafka-的三大功能：&quot;&gt;&lt;a href=&quot;#Kafka-的三大功能：&quot; class=&quot;headerlink&quot; title=&quot;Kafka 的三大功能：&quot;&gt;&lt;/a&gt;Kafka 的三大功能：&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;发布 &amp;amp; 订阅&lt;/p&gt;
-&lt;p&gt;类似于一个消息系统，读写流式的数据。                                    &lt;/p&gt;
+      &lt;h2 id=&quot;kafka-a-distributed-streaming-platform&quot;&gt;Kafka (a distributed streaming platform)&lt;/h2&gt;
+&lt;h4 id=&quot;kafka-的三大功能：&quot;&gt;Kafka 的三大功能：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;发布 &amp;amp; 订阅&lt;/p&gt;
+&lt;p&gt;类似于一个消息系统，读写流式的数据。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;处理&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;处理&lt;/p&gt;
 &lt;p&gt;编写可扩展的流处理应用程序，用于实时时间相应的场景。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;存储&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;存储&lt;/p&gt;
 &lt;p&gt;安全的将流式的数据存储在一个分布式、有副本备份、容错的集群。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -430,14 +457,17 @@
     <link href="https://jokinglove.com/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/"/>
     <id>https://jokinglove.com/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/</id>
     <published>2019-05-12T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.208Z</updated>
+    <updated>2019-07-09T09:10:47.457Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Spring-Boot-整合-ElasticSearch-入门&quot;&gt;&lt;a href=&quot;#Spring-Boot-整合-ElasticSearch-入门&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot 整合 ElasticSearch 入门&quot;&gt;&lt;/a&gt;Spring Boot 整合 ElasticSearch 入门&lt;/h3&gt;&lt;p&gt;​    利用 spring data elasticsearch 模块来对 elasticsearch 进行基础的增删改查，elasticsearch 利用 docker 的方式启动运行。&lt;/p&gt;
-&lt;h4 id=&quot;启动-elasticsearch&quot;&gt;&lt;a href=&quot;#启动-elasticsearch&quot; class=&quot;headerlink&quot; title=&quot;启动 elasticsearch&quot;&gt;&lt;/a&gt;启动 elasticsearch&lt;/h4&gt;&lt;h6 id=&quot;下载-elasticsearch-的-docker-镜像：&quot;&gt;&lt;a href=&quot;#下载-elasticsearch-的-docker-镜像：&quot; class=&quot;headerlink&quot; title=&quot;下载 elasticsearch 的 docker 镜像：&quot;&gt;&lt;/a&gt;下载 elasticsearch 的 docker 镜像：&lt;/h6&gt;&lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker pull docker.elastic.co/elasticsearch/elasticsearch:6.7.2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h6 id=&quot;以开发模式运行-elasticsearch-的-docker-容器：&quot;&gt;&lt;a href=&quot;#以开发模式运行-elasticsearch-的-docker-容器：&quot; class=&quot;headerlink&quot; title=&quot;以开发模式运行 elasticsearch 的 docker 容器：&quot;&gt;&lt;/a&gt;以开发模式运行 elasticsearch 的 docker 容器：&lt;/h6&gt;&lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -p 9200:9200 -p 9300:9300 -e &lt;span class=&quot;string&quot;&gt;&quot;discovery.type=single-node&quot;&lt;/span&gt; docker.elastic.co/elasticsearch/elasticsearch:6.7.2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h3 id=&quot;spring-boot-整合-elasticsearch-入门&quot;&gt;Spring Boot 整合 ElasticSearch 入门&lt;/h3&gt;
+&lt;p&gt;​	利用 spring data elasticsearch 模块来对 elasticsearch 进行基础的增删改查，elasticsearch 利用 docker 的方式启动运行。&lt;/p&gt;
+&lt;h4 id=&quot;启动-elasticsearch&quot;&gt;启动 elasticsearch&lt;/h4&gt;
+&lt;h6 id=&quot;下载-elasticsearch-的-docker-镜像：&quot;&gt;下载 elasticsearch 的 docker 镜像：&lt;/h6&gt;
+&lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker pull docker.elastic.co/elasticsearch/elasticsearch:6.7.2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h6 id=&quot;以开发模式运行-elasticsearch-的-docker-容器：&quot;&gt;以开发模式运行 elasticsearch 的 docker 容器：&lt;/h6&gt;
+&lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -p 9200:9200 -p 9300:9300 -e &lt;span class=&quot;string&quot;&gt;&quot;discovery.type=single-node&quot;&lt;/span&gt; docker.elastic.co/elasticsearch/elasticsearch:6.7.2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -461,12 +491,15 @@
     <link href="https://jokinglove.com/blog/2019/05/12/others/microservice/20190512-cat/"/>
     <id>https://jokinglove.com/blog/2019/05/12/others/microservice/20190512-cat/</id>
     <published>2019-05-11T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.207Z</updated>
+    <updated>2019-07-09T09:10:47.457Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;美团系统监控工具-Cat-入门&quot;&gt;&lt;a href=&quot;#美团系统监控工具-Cat-入门&quot; class=&quot;headerlink&quot; title=&quot;美团系统监控工具 Cat 入门&quot;&gt;&lt;/a&gt;美团系统监控工具 Cat 入门&lt;/h2&gt;&lt;h3 id=&quot;Cat-简介&quot;&gt;&lt;a href=&quot;#Cat-简介&quot; class=&quot;headerlink&quot; title=&quot;Cat 简介&quot;&gt;&lt;/a&gt;Cat 简介&lt;/h3&gt;&lt;p&gt;CAT (Center Application Tracking) ，是基于 Java 开发的分布式实时监控系统。CAT 在基础存储、高性能童心、大规模在线访问、服务治理、实时监控、容器化及集群智能调度等领域提供业界领先的、统一的解决方案。CAT 目前在美团的产品定位是应用层的统一监控组件，基本接入了美团的所有核心应用，在中间件 (RPC、数据库、缓存、MQ等) 框架中得到广泛的应用，为各业务线提供系统的性能指标、健康状况、实时告警等。&lt;/p&gt;
-&lt;h3 id=&quot;Cat-的产品价值&quot;&gt;&lt;a href=&quot;#Cat-的产品价值&quot; class=&quot;headerlink&quot; title=&quot;Cat 的产品价值&quot;&gt;&lt;/a&gt;Cat 的产品价值&lt;/h3&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;美团系统监控工具-cat-入门&quot;&gt;美团系统监控工具 Cat 入门&lt;/h2&gt;
+&lt;h3 id=&quot;cat-简介&quot;&gt;Cat 简介&lt;/h3&gt;
+&lt;p&gt;CAT (Center Application Tracking) ，是基于 Java 开发的分布式实时监控系统。CAT 在基础存储、高性能童心、大规模在线访问、服务治理、实时监控、容器化及集群智能调度等领域提供业界领先的、统一的解决方案。CAT 目前在美团的产品定位是应用层的统一监控组件，基本接入了美团的所有核心应用，在中间件 (RPC、数据库、缓存、MQ等) 框架中得到广泛的应用，为各业务线提供系统的性能指标、健康状况、实时告警等。&lt;/p&gt;
+&lt;h3 id=&quot;cat-的产品价值&quot;&gt;Cat 的产品价值&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;减少线上问题的发现时间&lt;/li&gt;
 &lt;li&gt;减少问题故障的定位时间&lt;/li&gt;
 &lt;li&gt;辅助应用程序的优化工具&lt;/li&gt;
@@ -479,11 +512,11 @@
     
       <category term="IT" scheme="https://jokinglove.com/blog/group/tags/IT/"/>
     
-      <category term="cat" scheme="https://jokinglove.com/blog/group/tags/cat/"/>
-    
       <category term="监控" scheme="https://jokinglove.com/blog/group/tags/%E7%9B%91%E6%8E%A7/"/>
     
       <category term="microservice" scheme="https://jokinglove.com/blog/group/tags/microservice/"/>
+    
+      <category term="cat" scheme="https://jokinglove.com/blog/group/tags/cat/"/>
     
   </entry>
   
@@ -492,15 +525,20 @@
     <link href="https://jokinglove.com/blog/2019/05/11/others/microservice/20190510-prometheus/"/>
     <id>https://jokinglove.com/blog/2019/05/11/others/microservice/20190510-prometheus/</id>
     <published>2019-05-10T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.207Z</updated>
+    <updated>2019-07-09T09:10:47.456Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Prometheus-入门&quot;&gt;&lt;a href=&quot;#Prometheus-入门&quot; class=&quot;headerlink&quot; title=&quot;Prometheus 入门&quot;&gt;&lt;/a&gt;Prometheus 入门&lt;/h1&gt;&lt;h2 id=&quot;Prometheus-简介&quot;&gt;&lt;a href=&quot;#Prometheus-简介&quot; class=&quot;headerlink&quot; title=&quot;Prometheus 简介&quot;&gt;&lt;/a&gt;Prometheus 简介&lt;/h2&gt;&lt;p&gt;Prometheus 是一个系统监控工具，支持。。。。&lt;/p&gt;
-&lt;h2 id=&quot;Prometheus-安装&quot;&gt;&lt;a href=&quot;#Prometheus-安装&quot; class=&quot;headerlink&quot; title=&quot;Prometheus 安装&quot;&gt;&lt;/a&gt;Prometheus 安装&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;通过连接中下载相应版本的 Prometheus &lt;a href=&quot;https://prometheus.io/download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+      &lt;h1&gt;Prometheus 入门&lt;/h1&gt;
+&lt;h2 id=&quot;prometheus-简介&quot;&gt;Prometheus 简介&lt;/h2&gt;
+&lt;p&gt;Prometheus 是一个系统监控工具，支持。。。。&lt;/p&gt;
+&lt;h2 id=&quot;prometheus-安装&quot;&gt;Prometheus 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;通过连接中下载相应版本的 Prometheus &lt;a href=&quot;https://prometheus.io/download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;解压下载的文件&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;解压下载的文件&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvfz prometheus-*.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd prometheus-*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -512,11 +550,11 @@
     
       <category term="IT" scheme="https://jokinglove.com/blog/group/tags/IT/"/>
     
+      <category term="promethus" scheme="https://jokinglove.com/blog/group/tags/promethus/"/>
+    
       <category term="监控" scheme="https://jokinglove.com/blog/group/tags/%E7%9B%91%E6%8E%A7/"/>
     
       <category term="microservice" scheme="https://jokinglove.com/blog/group/tags/microservice/"/>
-    
-      <category term="promethus" scheme="https://jokinglove.com/blog/group/tags/promethus/"/>
     
   </entry>
   
@@ -525,7 +563,7 @@
     <link href="https://jokinglove.com/blog/2019/04/25/others/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
     <id>https://jokinglove.com/blog/2019/04/25/others/spring-容器初始化的几种方式/</id>
     <published>2019-04-24T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.208Z</updated>
+    <updated>2019-07-09T09:10:47.458Z</updated>
     
     <summary type="html">
     
@@ -545,7 +583,7 @@
     <link href="https://jokinglove.com/blog/2019/04/25/others/java/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
     <id>https://jokinglove.com/blog/2019/04/25/others/java/spring-容器初始化的几种方式/</id>
     <published>2019-04-24T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.206Z</updated>
+    <updated>2019-07-09T09:10:47.454Z</updated>
     
     <summary type="html">
     
@@ -565,14 +603,16 @@
     <link href="https://jokinglove.com/blog/2018/07/22/others/python1/"/>
     <id>https://jokinglove.com/blog/2018/07/22/others/python1/</id>
     <published>2018-07-21T16:00:00.000Z</published>
-    <updated>2019-07-09T08:48:13.208Z</updated>
+    <updated>2019-07-09T09:10:47.458Z</updated>
     
     <summary type="html">
     
-      &lt;h5 id=&quot;Python3中有六个标准的数据类型：&quot;&gt;&lt;a href=&quot;#Python3中有六个标准的数据类型：&quot; class=&quot;headerlink&quot; title=&quot;Python3中有六个标准的数据类型：&quot;&gt;&lt;/a&gt;Python3中有六个标准的数据类型：&lt;/h5&gt;&lt;ul&gt;
+      &lt;h5 id=&quot;python3中有六个标准的数据类型：&quot;&gt;Python3中有六个标准的数据类型：&lt;/h5&gt;
+&lt;ul&gt;
 &lt;li&gt;字符串（String）&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;数字（Digit）&lt;/li&gt;
-&lt;li&gt;列表（List）
+&lt;li&gt;列表（List）&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

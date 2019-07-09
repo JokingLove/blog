@@ -402,61 +402,60 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h3 id="MongoDb-常用方法"><a href="#MongoDb-常用方法" class="headerlink" title="MongoDb 常用方法"></a>MongoDb 常用方法</h3><ol>
-<li><p>$regx: 值匹配</p>
+          <h3 id="mongodb-常用方法">MongoDb 常用方法</h3>
+<ol>
+<li>
+<p>$regx: 值匹配</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: <span class="string">'pattern'</span>, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/&lt;options&gt; &#125; &#125;</span><br></pre></td></tr></table></figure>
-
 <p>$options:</p>
 <ul>
-<li>i：    忽略大小写</li>
+<li>i：	忽略大小写</li>
 <li>m： For patterns that include anchors (i.e. <code>^</code> for the start, <code>$</code> for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. <code>\n</code>), the <code>m</code> option has no effect.（对于新的一行，m是不起作用的）</li>
 <li>x：“Extended” capability to ignore all white space characters in the <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex" target="_blank" rel="noopener"><code>$regex</code></a>pattern unless escaped or included in a character class.</li>
 <li>Allows the dot character (i.e. <code>.</code>) to match all characters <em>including</em> newline characters. For an example, see <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#regex-dot-new-line" target="_blank" rel="noopener">Use the . Dot Character to Match New Line</a>.</li>
 </ul>
 <p>example：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; name: &#123; <span class="variable">$regex</span>: /acme.*corp/, <span class="variable">$options</span>: <span class="string">"si"</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
-
 <a id="more"></a>
 </li>
-<li><p>$unwind</p>
+<li>
+<p>$unwind</p>
 <p><a href="https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="variable">$unwind</span>: &lt;field path&gt; &#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="variable">$unwind</span>:</span><br><span class="line">    &#123;</span><br><span class="line">      path: &lt;field path&gt;,</span><br><span class="line">      includeArrayIndex: &lt;string&gt;,</span><br><span class="line">      preserveNullAndEmptyArrays: &lt;boolean&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <table>
 <thead>
 <tr>
-<th align="left">Field</th>
-<th align="left">Type</th>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Type</th>
 <th>Description</th>
-<th align="left"></th>
+<th style="text-align:left"></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>path</code></td>
-<td align="left">string</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>path</code></td>
+<td style="text-align:left">string</td>
 <td>Field path to an array field. To specify a field path, prefix the field name with a dollar sign <code>$</code> and enclose in quotes.</td>
-<td align="left">用$符号来获取属性中的数组字段</td>
+<td style="text-align:left">用$符号来获取属性中的数组字段</td>
 </tr>
 <tr>
-<td align="left"><code>includeArrayIndex</code></td>
-<td align="left">string</td>
+<td style="text-align:left"><code>includeArrayIndex</code></td>
+<td style="text-align:left">string</td>
 <td>Optional. The name of a new field to hold the array index of the element. The name cannot start with a dollar sign <code>$</code>.</td>
-<td align="left">输出在数组中的下标位置</td>
+<td style="text-align:left">输出在数组中的下标位置</td>
 </tr>
 <tr>
-<td align="left"><code>preserveNullAndEmptyArrays</code></td>
-<td align="left">boolean</td>
+<td style="text-align:left"><code>preserveNullAndEmptyArrays</code></td>
+<td style="text-align:left">boolean</td>
 <td>Optional. If <code>true</code>, if the <code>path</code> is null, missing, or an empty array,<a href="https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/#pipe._S_unwind" target="_blank" rel="noopener"><code>$unwind</code></a> outputs the document. If <code>false</code>, <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/#pipe._S_unwind" target="_blank" rel="noopener"><code>$unwind</code></a> does not output a document if the <code>path</code> is null, missing, or an empty array.The default value is <code>false</code>.</td>
-<td align="left">true 代表输出，当数组是错误的，空的，或者空数组是，都输出来</td>
+<td style="text-align:left">true 代表输出，当数组是错误的，空的，或者空数组是，都输出来</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>Example</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"_id"</span> : 1, <span class="string">"item"</span> : <span class="string">"ABC1"</span>, sizes: [ <span class="string">"S"</span>, <span class="string">"M"</span>, <span class="string">"L"</span>] &#125;  <span class="comment"># 原来文档</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.inventory.aggregate( [ &#123; <span class="variable">$unwind</span> : <span class="string">"<span class="variable">$sizes</span>"</span> &#125; ] )  <span class="comment"># 执行语句</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行结果如下</span></span><br><span class="line">&#123; <span class="string">"_id"</span> : 1, <span class="string">"item"</span> : <span class="string">"ABC1"</span>, <span class="string">"sizes"</span> : <span class="string">"S"</span> &#125;</span><br><span class="line">&#123; <span class="string">"_id"</span> : 1, <span class="string">"item"</span> : <span class="string">"ABC1"</span>, <span class="string">"sizes"</span> : <span class="string">"M"</span> &#125;	</span><br><span class="line">&#123; <span class="string">"_id"</span> : 1, <span class="string">"item"</span> : <span class="string">"ABC1"</span>, <span class="string">"sizes"</span> : <span class="string">"L"</span> &#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
@@ -470,7 +469,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T16:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T17:10:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 9, 2019</p>
@@ -496,12 +495,13 @@
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/&title=MongoDb 常用方法 | JOKING&summary=MongoDb 常用方法
+
+
 $regx: 值匹配
 123&#123; &lt;field&gt;: &#123; $regex: /pattern/, $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: 'pattern', $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: /pattern/&lt;options&gt; &#125; &#125;
-
 $options:
 
-i：    忽略大小写
+i：	忽略大小写
 m： For patterns that include anchors (i.e. ^ for the start, $ for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. \n), the m option has no effect.（对于新的一行，m是不起作用的）
 x：“Extended” capability to ignore all white space characters in the $regexpattern unless escaped or included in a character class.
 Allows the dot character (i.e. .) to match all characters including newline characters. For an example, see Use the . Dot Character to Match New Line.
@@ -520,12 +520,13 @@ example：
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/&title=MongoDb 常用方法 | JOKING&summary=MongoDb 常用方法
+
+
 $regx: 值匹配
 123&#123; &lt;field&gt;: &#123; $regex: /pattern/, $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: 'pattern', $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: /pattern/&lt;options&gt; &#125; &#125;
-
 $options:
 
-i：    忽略大小写
+i：	忽略大小写
 m： For patterns that include anchors (i.e. ^ for the start, $ for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. \n), the m option has no effect.（对于新的一行，m是不起作用的）
 x：“Extended” capability to ignore all white space characters in the $regexpattern unless escaped or included in a character class.
 Allows the dot character (i.e. .) to match all characters including newline characters. For an example, see Use the . Dot Character to Match New Line.
@@ -544,12 +545,13 @@ example：
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
           href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/&title=MongoDb 常用方法 | JOKING&summary=MongoDb 常用方法
+
+
 $regx: 值匹配
 123&#123; &lt;field&gt;: &#123; $regex: /pattern/, $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: 'pattern', $options: '&lt;options&gt;' &#125; &#125;&#123; &lt;field&gt;: &#123; $regex: /pattern/&lt;options&gt; &#125; &#125;
-
 $options:
 
-i：    忽略大小写
+i：	忽略大小写
 m： For patterns that include anchors (i.e. ^ for the start, $ for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. \n), the m option has no effect.（对于新的一行，m是不起作用的）
 x：“Extended” capability to ignore all white space characters in the $regexpattern unless escaped or included in a character class.
 Allows the dot character (i.e. .) to match all characters including newline characters. For an example, see Use the . Dot Character to Match New Line.
@@ -735,7 +737,7 @@ example：
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDb-常用方法"><span class="toc-text">MongoDb 常用方法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb-常用方法"><span class="toc-text">MongoDb 常用方法</span></a></li></ol>
     </div>
   </section>
 
@@ -1007,15 +1009,14 @@ example：
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

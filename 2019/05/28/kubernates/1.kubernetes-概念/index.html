@@ -402,34 +402,37 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。</p>
+          <h2 id="概念">概念</h2>
+<p>概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。</p>
 <ul>
-<li><a href="#概述"><strong>概述</strong></a></li>
+<li><a href="#%E6%A6%82%E8%BF%B0"><strong>概述</strong></a></li>
 <li>[ <strong>Kubernetes 对象</strong> ](# Kubernetes 对象)</li>
 <li>[<strong>Kubernetes 控制面</strong>](#Kubernetes 控制面)</li>
-<li><a href="#接下来"><strong>接下来</strong></a></li>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5"><strong>接下来</strong></a></li>
 </ul>
 <a id="more"></a>
-
-
-
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>要使用 Kubernetes，你需要使用 Kubernates API 对象来描述集群的预期状态 (desired state) ：包括你需要运行的应用或者负载，它们使用的镜像、副本数，以及所需网络和磁盘资源等等。你可以使用命令行工具 <code>kubectl</code> 来调用 Kubernetes API 创建对象，通过所创建的这些对象来配置预期状态。你也可以直接调用 Kubernetes API 和集群进行交互，设置或者修改预期状态。</p>
+<h2 id="概述">概述</h2>
+<p>要使用 Kubernetes，你需要使用 Kubernates API 对象来描述集群的预期状态 (desired state) ：包括你需要运行的应用或者负载，它们使用的镜像、副本数，以及所需网络和磁盘资源等等。你可以使用命令行工具 <code>kubectl</code> 来调用 Kubernetes API 创建对象，通过所创建的这些对象来配置预期状态。你也可以直接调用 Kubernetes API 和集群进行交互，设置或者修改预期状态。</p>
 <p>一旦你设置了所需的目标状态， Kubernetes 控制面 (control plane) 会促成集群的当前状态符合其预期状态。为此， Kubernetes 会自动执行各类任务，比如运行或者重启容器、调整给定应用的副本数等等。</p>
 <p>Kubernetes 控制面由一组运行在集群上的进程组成：</p>
 <ul>
 <li><strong>Kubernetes 主控组件（Master）</strong> 包含三个进程，都运行在集群中的某个节上，通常这个节点被称为 master 节点。这些进程包括：<a href="https://kubernetes.io/docs/admin/kube-apiserver/" target="_blank" rel="noopener">kube-apiserver</a>、<a href="https://kubernetes.io/docs/admin/kube-controller-manager/" target="_blank" rel="noopener">kube-controller-manager</a> 和 <a href="https://kubernetes.io/docs/admin/kube-scheduler/" target="_blank" rel="noopener">kube-scheduler</a>。</li>
-<li>集群中的每个非 master 节点都运行两个进程：<ul>
+<li>集群中的每个非 master 节点都运行两个进程：
+<ul>
 <li><strong><a href="https://kubernetes.io/docs/admin/kubelet/" target="_blank" rel="noopener">kubelet</a>,</strong>  和 master 节点进行通信。</li>
 <li><strong><a href="https://kubernetes.io/docs/admin/kube-proxy/" target="_blank" rel="noopener">kube-proxy</a>,</strong> 一种网络代理，将 Kubernetes 的网络服务代理到每个节点上。</li>
 </ul>
 </li>
 </ul>
-<h2 id="Kubernetes-对象"><a href="#Kubernetes-对象" class="headerlink" title="Kubernetes 对象"></a>Kubernetes 对象</h2><p>Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群运行的其他操作信息。这些抽象使用 Kubernetes API 对象来表示。参阅 <strong><a href="https://kubernetes.io/docs/concepts/abstractions/overview/" target="_blank" rel="noopener">Kubernetes 对象概述</a></strong> 来了解详细信息。</p>
+<h2 id="kubernetes-对象">Kubernetes 对象</h2>
+<p>Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群运行的其他操作信息。这些抽象使用 Kubernetes API 对象来表示。参阅 <strong><a href="https://kubernetes.io/docs/concepts/abstractions/overview/" target="_blank" rel="noopener">Kubernetes 对象概述</a></strong> 来了解详细信息。</p>
 <p>基本的 Kubernetes 对象包括：</p>
 <pre><code>* [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 * [Volume](https://kubernetes.io/docs/concepts/storage/volumes/)
-* [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)</code></pre><p>另外， Kubernetes 包含大量的被称作 <em>控制器 (controllers)</em>  高级抽象。控制器基于基本对象构建并提供额外的功能和方便使用的特性。具体包括：</p>
+* [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+</code></pre>
+<p>另外， Kubernetes 包含大量的被称作 <em>控制器 (controllers)</em>  高级抽象。控制器基于基本对象构建并提供额外的功能和方便使用的特性。具体包括：</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/" target="_blank" rel="noopener">ReplicaSet</a></li>
 <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank" rel="noopener">Deployment</a></li>
@@ -437,7 +440,8 @@
 <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/" target="_blank" rel="noopener">DaemonSet</a></li>
 <li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/" target="_blank" rel="noopener">Job</a></li>
 </ul>
-<h2 id="Kubernetes-控制面"><a href="#Kubernetes-控制面" class="headerlink" title="Kubernetes 控制面"></a>Kubernetes 控制面</h2><p>关于 Kubernetes 控制平面的各个部分， 如 Kubernetes 主控组件和 kubelet 进程，管理着 Kubernetes 如何与你的集群进行通信。控制平面维护着系统中所有的 Kubernetes 对象的状态记录，并且通过连续的控制循环来管理这些对象的状态。在任一的给定时间点，控制面的控制环都能相应集群中的变化，并且让系统中所有对象的实际状态与你提供的预期状态项匹配。</p>
+<h2 id="kubernetes-控制面">Kubernetes 控制面</h2>
+<p>关于 Kubernetes 控制平面的各个部分， 如 Kubernetes 主控组件和 kubelet 进程，管理着 Kubernetes 如何与你的集群进行通信。控制平面维护着系统中所有的 Kubernetes 对象的状态记录，并且通过连续的控制循环来管理这些对象的状态。在任一的给定时间点，控制面的控制环都能相应集群中的变化，并且让系统中所有对象的实际状态与你提供的预期状态项匹配。</p>
 <p>比如，当你通过 Kubernetes API 创建一个 Deployment 对象，你就为系统增加了一个新的目标状态。</p>
 <p>Kubernetes 控制平面记录着对象的创建，并启动必要的应用然后将他们调度至集群的某个节点上来执行你的指令，以此来保持集群的实际状态和目标状态的匹配。</p>
 <p><strong>Kubernetes Master 节点</strong></p>
@@ -449,7 +453,8 @@
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/" target="_blank" rel="noopener">注释</a></li>
 </ul>
-<h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2>
+<h2 id="接下来">接下来</h2>
+
         </div>
         
           
@@ -460,7 +465,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T16:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T17:10:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 9, 2019</p>
@@ -485,7 +490,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念
+概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
 
 概述
 [ Kubernetes 对象 ](# Kubernetes 对象)
@@ -503,7 +509,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念
+概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
 
 概述
 [ Kubernetes 对象 ](# Kubernetes 对象)
@@ -521,7 +528,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
+          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/&title=Kubernetes-概念 | JOKING&summary=概念
+概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。
 
 概述
 [ Kubernetes 对象 ](# Kubernetes 对象)
@@ -707,7 +715,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kubernetes-对象"><span class="toc-text">Kubernetes 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kubernetes-控制面"><span class="toc-text">Kubernetes 控制面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接下来"><span class="toc-text">接下来</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kubernetes-对象"><span class="toc-text">Kubernetes 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kubernetes-控制面"><span class="toc-text">Kubernetes 控制面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接下来"><span class="toc-text">接下来</span></a></li></ol>
     </div>
   </section>
 
@@ -979,15 +987,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

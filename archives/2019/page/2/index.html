@@ -392,7 +392,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>​
+      <h2 id="introduction">Introduction</h2>
+<p>​<br>
 <strong>Apache Kafka 是一个分布式流处理平台。这到底意味着什么呢？</strong></p>
 <p>流处理平台的三种特性：</p>
 <ol>
@@ -513,13 +514,14 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="MongoDb-常用方法"><a href="#MongoDb-常用方法" class="headerlink" title="MongoDb 常用方法"></a>MongoDb 常用方法</h3><ol>
-<li><p>$regx: 值匹配</p>
+      <h3 id="mongodb-常用方法">MongoDb 常用方法</h3>
+<ol>
+<li>
+<p>$regx: 值匹配</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: <span class="string">'pattern'</span>, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/&lt;options&gt; &#125; &#125;</span><br></pre></td></tr></table></figure>
-
 <p>$options:</p>
 <ul>
-<li>i：    忽略大小写</li>
+<li>i：	忽略大小写</li>
 <li>m： For patterns that include anchors (i.e. <code>^</code> for the start, <code>$</code> for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. <code>\n</code>), the <code>m</code> option has no effect.（对于新的一行，m是不起作用的）</li>
 <li>x：“Extended” capability to ignore all white space characters in the <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex" target="_blank" rel="noopener"><code>$regex</code></a>pattern unless escaped or included in a character class.</li>
 <li>Allows the dot character (i.e. <code>.</code>) to match all characters <em>including</em> newline characters. For an example, see <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#regex-dot-new-line" target="_blank" rel="noopener">Use the . Dot Character to Match New Line</a>.</li>
@@ -631,7 +633,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="Mongodb-中两个操作-Reduce-amp-Aggregate"><a href="#Mongodb-中两个操作-Reduce-amp-Aggregate" class="headerlink" title="Mongodb 中两个操作 Reduce &amp; Aggregate"></a>Mongodb 中两个操作 Reduce &amp; Aggregate</h2><h3 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map Reduce"></a>Map Reduce</h3><p>Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。</p>
+      <h2 id="mongodb-中两个操作-reduce-aggregate">Mongodb 中两个操作 Reduce &amp; Aggregate</h2>
+<h3 id="map-reduce">Map Reduce</h3>
+<p>Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。</p>
 <p>MongoDB 提供的 Map-Reduce 非常灵活，对于大规模数据分析也相当实用。</p>
 <hr>
       
@@ -649,113 +653,6 @@
           <a href="/blog/group/tags/Mongo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Mongo</a>
         
           <a href="/blog/group/tags/Database/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Database</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2019/05/15/others/20190605-markdown常用语法/">
-      markdown 常用语法汇总
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://jokinglove.com/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>JOKING</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-15</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/group/categories/上古神器/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>上古神器</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h3 id="markdown-常用语法汇总"><a href="#markdown-常用语法汇总" class="headerlink" title="markdown 常用语法汇总"></a>markdown 常用语法汇总</h3><p><u>这些字有下划线</u></p>
-<p>我有上标<sup>上标</sup></p>
-<p>我有下标<sub>下标</sub></p>
-<p><strong>加粗1</strong></p>
-      
-        <div class="readmore">
-          <a href="/blog/2019/05/15/others/20190605-markdown常用语法/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/group/tags/tools/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tools</a>
         
       </div>
     
@@ -846,13 +743,122 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="markdown-常用语法汇总"><a href="#markdown-常用语法汇总" class="headerlink" title="markdown 常用语法汇总"></a>markdown 常用语法汇总</h3><p><u>这些字有下划线</u></p>
+      <h3 id="markdown-常用语法汇总">markdown 常用语法汇总</h3>
+<p><u>这些字有下划线</u></p>
 <p>我有上标<sup>上标</sup></p>
 <p>我有下标<sub>下标</sub></p>
 <p><strong>加粗1</strong></p>
       
         <div class="readmore">
           <a href="/blog/2019/05/15/others/tools/20190605-markdown常用语法/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/group/tags/tools/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tools</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2019/05/15/others/20190605-markdown常用语法/">
+      markdown 常用语法汇总
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/上古神器/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>上古神器</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h3 id="markdown-常用语法汇总">markdown 常用语法汇总</h3>
+<p><u>这些字有下划线</u></p>
+<p>我有上标<sup>上标</sup></p>
+<p>我有下标<sub>下标</sub></p>
+<p><strong>加粗1</strong></p>
+      
+        <div class="readmore">
+          <a href="/blog/2019/05/15/others/20190605-markdown常用语法/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -953,14 +959,19 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="Kafka-a-distributed-streaming-platform"><a href="#Kafka-a-distributed-streaming-platform" class="headerlink" title="Kafka (a distributed streaming platform)"></a>Kafka (a distributed streaming platform)</h2><h4 id="Kafka-的三大功能："><a href="#Kafka-的三大功能：" class="headerlink" title="Kafka 的三大功能："></a>Kafka 的三大功能：</h4><ul>
-<li><p>发布 &amp; 订阅</p>
-<p>类似于一个消息系统，读写流式的数据。                                    </p>
+      <h2 id="kafka-a-distributed-streaming-platform">Kafka (a distributed streaming platform)</h2>
+<h4 id="kafka-的三大功能：">Kafka 的三大功能：</h4>
+<ul>
+<li>
+<p>发布 &amp; 订阅</p>
+<p>类似于一个消息系统，读写流式的数据。</p>
 </li>
-<li><p>处理</p>
+<li>
+<p>处理</p>
 <p>编写可扩展的流处理应用程序，用于实时时间相应的场景。</p>
 </li>
-<li><p>存储</p>
+<li>
+<p>存储</p>
 <p>安全的将流式的数据存储在一个分布式、有副本备份、容错的集群。</p>
 </li>
 </ul>
@@ -1071,10 +1082,13 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="Spring-Boot-整合-ElasticSearch-入门"><a href="#Spring-Boot-整合-ElasticSearch-入门" class="headerlink" title="Spring Boot 整合 ElasticSearch 入门"></a>Spring Boot 整合 ElasticSearch 入门</h3><p>​    利用 spring data elasticsearch 模块来对 elasticsearch 进行基础的增删改查，elasticsearch 利用 docker 的方式启动运行。</p>
-<h4 id="启动-elasticsearch"><a href="#启动-elasticsearch" class="headerlink" title="启动 elasticsearch"></a>启动 elasticsearch</h4><h6 id="下载-elasticsearch-的-docker-镜像："><a href="#下载-elasticsearch-的-docker-镜像：" class="headerlink" title="下载 elasticsearch 的 docker 镜像："></a>下载 elasticsearch 的 docker 镜像：</h6><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
-
-<h6 id="以开发模式运行-elasticsearch-的-docker-容器："><a href="#以开发模式运行-elasticsearch-的-docker-容器：" class="headerlink" title="以开发模式运行 elasticsearch 的 docker 容器："></a>以开发模式运行 elasticsearch 的 docker 容器：</h6><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 9200:9200 -p 9300:9300 -e <span class="string">"discovery.type=single-node"</span> docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
+      <h3 id="spring-boot-整合-elasticsearch-入门">Spring Boot 整合 ElasticSearch 入门</h3>
+<p>​	利用 spring data elasticsearch 模块来对 elasticsearch 进行基础的增删改查，elasticsearch 利用 docker 的方式启动运行。</p>
+<h4 id="启动-elasticsearch">启动 elasticsearch</h4>
+<h6 id="下载-elasticsearch-的-docker-镜像：">下载 elasticsearch 的 docker 镜像：</h6>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
+<h6 id="以开发模式运行-elasticsearch-的-docker-容器：">以开发模式运行 elasticsearch 的 docker 容器：</h6>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 9200:9200 -p 9300:9300 -e <span class="string">"discovery.type=single-node"</span> docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
       
         <div class="readmore">
           <a href="/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/" class="flat-box">
@@ -1186,8 +1200,11 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="美团系统监控工具-Cat-入门"><a href="#美团系统监控工具-Cat-入门" class="headerlink" title="美团系统监控工具 Cat 入门"></a>美团系统监控工具 Cat 入门</h2><h3 id="Cat-简介"><a href="#Cat-简介" class="headerlink" title="Cat 简介"></a>Cat 简介</h3><p>CAT (Center Application Tracking) ，是基于 Java 开发的分布式实时监控系统。CAT 在基础存储、高性能童心、大规模在线访问、服务治理、实时监控、容器化及集群智能调度等领域提供业界领先的、统一的解决方案。CAT 目前在美团的产品定位是应用层的统一监控组件，基本接入了美团的所有核心应用，在中间件 (RPC、数据库、缓存、MQ等) 框架中得到广泛的应用，为各业务线提供系统的性能指标、健康状况、实时告警等。</p>
-<h3 id="Cat-的产品价值"><a href="#Cat-的产品价值" class="headerlink" title="Cat 的产品价值"></a>Cat 的产品价值</h3><ul>
+      <h2 id="美团系统监控工具-cat-入门">美团系统监控工具 Cat 入门</h2>
+<h3 id="cat-简介">Cat 简介</h3>
+<p>CAT (Center Application Tracking) ，是基于 Java 开发的分布式实时监控系统。CAT 在基础存储、高性能童心、大规模在线访问、服务治理、实时监控、容器化及集群智能调度等领域提供业界领先的、统一的解决方案。CAT 目前在美团的产品定位是应用层的统一监控组件，基本接入了美团的所有核心应用，在中间件 (RPC、数据库、缓存、MQ等) 框架中得到广泛的应用，为各业务线提供系统的性能指标、健康状况、实时告警等。</p>
+<h3 id="cat-的产品价值">Cat 的产品价值</h3>
+<ul>
 <li>减少线上问题的发现时间</li>
 <li>减少问题故障的定位时间</li>
 <li>辅助应用程序的优化工具</li>
@@ -1206,11 +1223,11 @@
         
           <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>IT</a>
         
-          <a href="/blog/group/tags/cat/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>cat</a>
-        
           <a href="/blog/group/tags/监控/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>监控</a>
         
           <a href="/blog/group/tags/microservice/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>microservice</a>
+        
+          <a href="/blog/group/tags/cat/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>cat</a>
         
       </div>
     
@@ -1588,15 +1605,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

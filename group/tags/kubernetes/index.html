@@ -410,7 +410,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="使用-Minikube-创建一个集群"><a href="#使用-Minikube-创建一个集群" class="headerlink" title="使用 Minikube 创建一个集群"></a>使用 Minikube 创建一个集群</h2><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+      <h2 id="使用-minikube-创建一个集群">使用 Minikube 创建一个集群</h2>
+<h4 id="目标">目标</h4>
+<ul>
 <li>了解什么是 Kubernetes 集群</li>
 <li>了解什么是 Minikube</li>
 <li>使用在线终端启动 Kubernetes 集群</li>
@@ -522,7 +524,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="实操练习"><a href="#实操练习" class="headerlink" title="实操练习"></a>实操练习</h3><hr>
+      <h3 id="实操练习">实操练习</h3>
+<hr>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Kubernetes Bootcamp Terminal</span><br><span class="line"></span><br><span class="line">$ minikube version</span><br><span class="line">minikube version: v0.34.1</span><br><span class="line">$ minikube start</span><br><span class="line">o   minikube v0.34.1 on linux (amd64)</span><br><span class="line">&gt;   Configuring <span class="built_in">local</span> host environment ...</span><br><span class="line">&gt;   Creating none VM (CPUs=2, Memory=2048MB, Disk=20000MB) ...</span><br><span class="line">-   <span class="string">"minikube"</span> IP address is 172.17.0.7</span><br><span class="line">-   Configuring Docker as the container runtime ...</span><br><span class="line">-   Preparing Kubernetes environment ...</span><br><span class="line">@   Downloading kubeadm v1.13.3</span><br><span class="line">@   Downloading kubelet v1.13.3</span><br><span class="line">-   Pulling images required by Kubernetes v1.13.3 ...</span><br><span class="line">-   Launching Kubernetes v1.13.3 using kubeadm ...</span><br><span class="line">-   Configuring cluster permissions ...</span><br><span class="line">-   Verifying component health .....</span><br><span class="line">+   kubectl is now configured to use <span class="string">"minikube"</span></span><br><span class="line">=   Done! Thank you <span class="keyword">for</span> using minikube!</span><br><span class="line">$</span><br><span class="line">$ kubectl version</span><br><span class="line">Client Version: version.Info&#123;Major:<span class="string">"1"</span>, Minor:<span class="string">"13"</span>, GitVersion:<span class="string">"v1.13.3"</span>, GitCommit:<span class="string">"721bfa751924da8d1680787490c54b9179b1fed0"</span>, GitTreeState:<span class="string">"clean"</span>, BuildDate:<span class="string">"2019-02-01T20:08:12Z"</span>, GoVersion:<span class="string">"go1.11.5"</span>, Compiler:<span class="string">"gc"</span>, Platform:<span class="string">"linux/amd64"</span>&#125;</span><br><span class="line">Server Version: version.Info&#123;Major:<span class="string">"1"</span>, Minor:<span class="string">"13"</span>, GitVersion:<span class="string">"v1.13.3"</span>, GitCommit:<span class="string">"721bfa751924da8d1680787490c54b9179b1fed0"</span>, GitTreeState:<span class="string">"clean"</span>, BuildDate:<span class="string">"2019-02-01T20:00:57Z"</span>, GoVersion:<span class="string">"go1.11.5"</span>, Compiler:<span class="string">"gc"</span>, Platform:<span class="string">"linux/amd64"</span>&#125;</span><br><span class="line">$</span><br><span class="line">$ kubectl cluster-info</span><br><span class="line">Kubernetes master is running at https://172.17.0.7:8443</span><br><span class="line">KubeDNS is running at https://172.17.0.7:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy</span><br><span class="line"></span><br><span class="line">To further debug and diagnose cluster problems, use <span class="string">'kubectl cluster-info dump'</span>.</span><br><span class="line">$</span><br><span class="line">$ kubectl get nodes</span><br><span class="line">NAME       STATUS   ROLES    AGE    VERSION</span><br><span class="line">minikube   Ready    master   100s   v1.13.3</span><br></pre></td></tr></table></figure>
       
         <div class="readmore">
@@ -629,18 +632,25 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="Kubernetes-的基础模块"><a href="#Kubernetes-的基础模块" class="headerlink" title="Kubernetes 的基础模块"></a>Kubernetes 的基础模块</h3><ol>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/cluster-intro/" target="_blank" rel="noopener">创建一个 Kubernetes 集群</a></p>
+      <h3 id="kubernetes-的基础模块">Kubernetes 的基础模块</h3>
+<ol>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/cluster-intro/" target="_blank" rel="noopener">创建一个 Kubernetes 集群</a></p>
 </li>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/deploy-intro/" target="_blank" rel="noopener">部署应用程序</a></p>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/deploy-intro/" target="_blank" rel="noopener">部署应用程序</a></p>
 </li>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/explore-intro/" target="_blank" rel="noopener">应用程序探索</a></p>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/explore-intro/" target="_blank" rel="noopener">应用程序探索</a></p>
 </li>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/expose-intro/" target="_blank" rel="noopener">应用外部可见</a></p>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/expose-intro/" target="_blank" rel="noopener">应用外部可见</a></p>
 </li>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/scale-intro/" target="_blank" rel="noopener">应用可扩展</a></p>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/scale-intro/" target="_blank" rel="noopener">应用可扩展</a></p>
 </li>
-<li><p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/update-intro/" target="_blank" rel="noopener">应用更新</a></p>
+<li>
+<p><a href="https://kubernetes.cn/zh/docs/tutorials/kubernetes-basics/update-intro/" target="_blank" rel="noopener">应用更新</a></p>
 </li>
 </ol>
       
@@ -748,7 +758,8 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="Kubernetes-设计架构"><a href="#Kubernetes-设计架构" class="headerlink" title="Kubernetes 设计架构"></a>Kubernetes 设计架构</h2><p>Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。</p>
+      <h2 id="kubernetes-设计架构">Kubernetes 设计架构</h2>
+<p>Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。</p>
 <p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190604094531.png" alt="架构图"></p>
 <p><a href="https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.2/docs/design/architecture.png" target="_blank" rel="noopener">查看高清无码图</a></p>
       
@@ -856,13 +867,16 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="认识-Kubernetes？"><a href="#认识-Kubernetes？" class="headerlink" title="认识 Kubernetes？"></a>认识 Kubernetes？</h2><ul>
-<li><p><strong><a href="#tedian"> Kubernetes 具有如下特点：</a></strong></p>
+      <h2 id="认识-kubernetes？">认识 Kubernetes？</h2>
+<ul>
+<li>
+<p><strong><a href="#tedian"> Kubernetes 具有如下特点：</a></strong></p>
 <ul>
 <li><strong><a href="#">准备好 开始?</a></strong></li>
 </ul>
 </li>
-<li><p><strong><a href>为什么是容器？</a></strong></p>
+<li>
+<p><strong><a href>为什么是容器？</a></strong></p>
 <ul>
 <li><strong><a href="#">为什么我们需要 Kubernetes，它能做什么？</a></strong></li>
 <li><strong><a href="#">为什么 Kubernetes 是一个平台？</a></strong></li>
@@ -985,12 +999,13 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。</p>
+      <h2 id="概念">概念</h2>
+<p>概念部分可以帮助你了解 Kubernetes 的各个组成部分以及 Kubernetes 用来表示集群的一些抽象概念，并帮助你更加深入的理解 Kubernetes 是如何工作的。</p>
 <ul>
-<li><a href="#概述"><strong>概述</strong></a></li>
+<li><a href="#%E6%A6%82%E8%BF%B0"><strong>概述</strong></a></li>
 <li>[ <strong>Kubernetes 对象</strong> ](# Kubernetes 对象)</li>
 <li>[<strong>Kubernetes 控制面</strong>](#Kubernetes 控制面)</li>
-<li><a href="#接下来"><strong>接下来</strong></a></li>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5"><strong>接下来</strong></a></li>
 </ul>
       
         <div class="readmore">
@@ -1361,15 +1376,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

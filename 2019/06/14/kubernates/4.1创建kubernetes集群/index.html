@@ -402,30 +402,32 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="使用-Minikube-创建一个集群"><a href="#使用-Minikube-创建一个集群" class="headerlink" title="使用 Minikube 创建一个集群"></a>使用 Minikube 创建一个集群</h2><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+          <h2 id="使用-minikube-创建一个集群">使用 Minikube 创建一个集群</h2>
+<h4 id="目标">目标</h4>
+<ul>
 <li>了解什么是 Kubernetes 集群</li>
 <li>了解什么是 Minikube</li>
 <li>使用在线终端启动 Kubernetes 集群</li>
 </ul>
 <a id="more"></a>
-
-
-
-<h4 id="Kubernetes-集群"><a href="#Kubernetes-集群" class="headerlink" title="Kubernetes 集群"></a>Kubernetes 集群</h4><p><strong>Kubernetes 用于协调高度可用的计算机集群，这些计算机集群被连接作为单个单元工作。</strong> Kubernetes 的抽象性允许您将容器的应用程序部署到集群，而不必专门将其绑定到单个计算机。为了利用这种新的部署模型，应用程序需要以将他们与各个主机分离的方式打包：他们需要被容器化。容器化应用程序比过去的部署模型更灵活和可用，其中应用程序直接安装到特定机器上，作为深入集成到主机中的软件包。<strong>Kubernetes 在一个集群上以更有效的方式自动分发和调度容器应用程序。</strong> Kubernetes 是一个开源平台，可满足生产环境的需要。</p>
+<h4 id="kubernetes-集群">Kubernetes 集群</h4>
+<p><strong>Kubernetes 用于协调高度可用的计算机集群，这些计算机集群被连接作为单个单元工作。</strong> Kubernetes 的抽象性允许您将容器的应用程序部署到集群，而不必专门将其绑定到单个计算机。为了利用这种新的部署模型，应用程序需要以将他们与各个主机分离的方式打包：他们需要被容器化。容器化应用程序比过去的部署模型更灵活和可用，其中应用程序直接安装到特定机器上，作为深入集成到主机中的软件包。<strong>Kubernetes 在一个集群上以更有效的方式自动分发和调度容器应用程序。</strong> Kubernetes 是一个开源平台，可满足生产环境的需要。</p>
 <p>Kubernetes 集群有两种类型的资源组成：</p>
 <ul>
 <li>一个 <strong>Master</strong> 是集群的调度节点</li>
 <li><strong>Nodes</strong> 是应用程序实际运行的工作节点</li>
 </ul>
 <blockquote>
-<h4 id="概要："><a href="#概要：" class="headerlink" title="概要："></a>概要：</h4><hr>
+<h4 id="概要：">概要：</h4>
+<hr>
 <ul>
 <li>Kubernetes 集群</li>
 <li>MiniKube</li>
 </ul>
 </blockquote>
 <p><font color="blue">Kubernetes 是一个生产级的开源平台，用于协调计算机集群内部和跨计算机集群的应用程序容器分发（调度）和运行。</font></p>
-<h4 id="集群图"><a href="#集群图" class="headerlink" title="集群图"></a><font color="blue">集群图</font></h4><p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190606145311.png" alt="集群图"></p>
+<h4 id="font-color-blue-集群图-font"><font color="blue">集群图</font></h4>
+<p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190606145311.png" alt="集群图"></p>
 <p><strong>Master 负责管理集群。</strong> master 协调集群中的所有活动，例如调度应用程序、维护应用程序的所需状态、扩展应用程序和滚动更新。</p>
 <p><strong>节点是 Kubernetes 集群中的工作机器，可以是物理机或者虚拟机。</strong> 每个工作节点都有一个 Kubelet， 它是管理节点并与 Kubernetes Master 几点进行通信的代理。节点上应该具有处理容器操作的工作，例如 <strong>Docker</strong> 或者 <strong>rkt</strong>。一个 Kubernetes 工作集群至少有三个节点。</p>
 <blockquote>
@@ -444,7 +446,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T16:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T17:10:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 9, 2019</p>
@@ -469,7 +471,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群目标
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群
+目标
+
 了解什么是 Kubernetes 集群
 了解什么是 Minikube
 使用在线终端启动 Kubernetes 集群
@@ -485,7 +489,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群目标
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群
+目标
+
 了解什么是 Kubernetes 集群
 了解什么是 Minikube
 使用在线终端启动 Kubernetes 集群
@@ -501,7 +507,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群目标
+          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/&title=Kubernetes-创建集群 | JOKING&summary=使用 Minikube 创建一个集群
+目标
+
 了解什么是 Kubernetes 集群
 了解什么是 Minikube
 使用在线终端启动 Kubernetes 集群
@@ -685,7 +693,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Minikube-创建一个集群"><span class="toc-text">使用 Minikube 创建一个集群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes-集群"><span class="toc-text">Kubernetes 集群</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#概要："><span class="toc-text">概要：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集群图"><span class="toc-text">集群图</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-minikube-创建一个集群"><span class="toc-text">使用 Minikube 创建一个集群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubernetes-集群"><span class="toc-text">Kubernetes 集群</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#概要："><span class="toc-text">概要：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#font-color-blue-集群图-font"><span class="toc-text">集群图</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -957,15 +965,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

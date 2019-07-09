@@ -402,14 +402,13 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="Kubernetes-设计架构"><a href="#Kubernetes-设计架构" class="headerlink" title="Kubernetes 设计架构"></a>Kubernetes 设计架构</h2><p>Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。</p>
+          <h2 id="kubernetes-设计架构">Kubernetes 设计架构</h2>
+<p>Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。</p>
 <p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190604094531.png" alt="架构图"></p>
 <p><a href="https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.2/docs/design/architecture.png" target="_blank" rel="noopener">查看高清无码图</a></p>
 <a id="more"></a>
-
-
-
-<h4 id="Kubernetes-节点"><a href="#Kubernetes-节点" class="headerlink" title="Kubernetes 节点"></a>Kubernetes 节点</h4><p>在这张系统架构图中，我们把服务分为运行在工作节点上的服务和组成集群级别控制板的服务。</p>
+<h4 id="kubernetes-节点">Kubernetes 节点</h4>
+<p>在这张系统架构图中，我们把服务分为运行在工作节点上的服务和组成集群级别控制板的服务。</p>
 <p>Kubernetes 节点有运行应用容器必备的服务，而这些都是受 Master 的控制。</p>
 <p>每个节点上都要运行 Docker。Docker 来负责所有具体的镜像下载和容器运行。</p>
 <p>Kubernetes 主要由以下几个核心组件组成：</p>
@@ -437,24 +436,33 @@
 <p>Kubernetes 设计理念和功能其实就是一个类 Linux 的分层架构，如下图所示：</p>
 <p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190604131815.png" alt></p>
 <ul>
-<li>核心层：Kubernetes 最核心的功能，对外提供<br>API 构建高层的应用，对内提供插件式应用执行环境</li>
+<li>核心层：Kubernetes 最核心的功能，对外提供<br>
+API 构建高层的应用，对内提供插件式应用执行环境</li>
 <li>应用层：部署 (无状态应用、有状态应用、批处理任务、集群应用等) 和路由 (服务发现、DNS解析等)</li>
 <li>管理层：系统度量 (如基础设施、容器和网络的度量) ，自动化 (如自动扩展、动态 Provision 等) 以及策略管理 (RBAC、Quota、 PSP、NetworkPolicy等)</li>
 <li>接口层：kubectl 命令行工具、客户端 SDK 以及集群联邦</li>
-<li>生态系统：在接口层之上的庞大容器集群管理调度的生态系统，可以划分为两个范畴：<ul>
+<li>生态系统：在接口层之上的庞大容器集群管理调度的生态系统，可以划分为两个范畴：
+<ul>
 <li>Kubernetes 外部：日志、监控、配置管理、CI、CD、Workflow、Faas、OTS应用、ChatOps 等</li>
 <li>Kubernetes 内部：CRI、CNI、CVI、镜像仓库、Cloud Provider、集群自身的配置和管理等</li>
 </ul>
 </li>
 </ul>
-<h4 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h4><p>kubelet 负责管理 <a href="https://www.kubernetes.org.cn/kubernetes-pod" target="_blank" rel="noopener">pods</a> 和他们上面的容器，image 镜像、volumes、etc。</p>
-<h4 id="kube-proxy"><a href="#kube-proxy" class="headerlink" title="kube-proxy"></a>kube-proxy</h4><p>每一个节点运行一个简单的网络代理和负载均衡  ( 详见 <a href="https://github.com/kubernetes/kubernetes/wiki/Services-FAQ" target="_blank" rel="noopener">services FAQ</a> )  。正如 Kubernetes API 里面定义的这些服务  ( 详见 <a href="https://github.com/kubernetes/kubernetes/blob/release-1.2/docs/user-guide/services.md" target="_blank" rel="noopener"> the services doc</a> ) 也可以在各种终端中以轮询的方式做一些简单的 TCP 和 UDP 传输。</p>
+<h4 id="kubelet">kubelet</h4>
+<p>kubelet 负责管理 <a href="https://www.kubernetes.org.cn/kubernetes-pod" target="_blank" rel="noopener">pods</a> 和他们上面的容器，image 镜像、volumes、etc。</p>
+<h4 id="kube-proxy">kube-proxy</h4>
+<p>每一个节点运行一个简单的网络代理和负载均衡  ( 详见 <a href="https://github.com/kubernetes/kubernetes/wiki/Services-FAQ" target="_blank" rel="noopener">services FAQ</a> )  。正如 Kubernetes API 里面定义的这些服务  ( 详见 <a href="https://github.com/kubernetes/kubernetes/blob/release-1.2/docs/user-guide/services.md" target="_blank" rel="noopener"> the services doc</a> ) 也可以在各种终端中以轮询的方式做一些简单的 TCP 和 UDP 传输。</p>
 <p>服务端点目前是通过 DNS 或者环境变量  ( Docker-links-compatible  和 Kubernetes{FOO}_SERVICE_HOST 及 {FOO}_SERVICE_PORT 变量都支持）。这些变量由服务代理所管理的端口来解析。</p>
-<h4 id="Kubernetes-控制面板"><a href="#Kubernetes-控制面板" class="headerlink" title="Kubernetes 控制面板"></a>Kubernetes 控制面板</h4><p>Kubernetes 控制面板可以分为多个部分。目前他们都运行在一个 <em>master</em> 节点，然而为了达到高可用性，这需要改变。不同部分一起协作提供一个统一的关于集群的视图。</p>
-<h4 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h4><p>所有 master 的持续状态都在 etcd 的一个实例中。这可以很好地存储配置数据。因为有 watch (观察者) 的支持，个部件协调中的改变可以很快被察觉。</p>
-<h4 id="Kubernetes-API-Server"><a href="#Kubernetes-API-Server" class="headerlink" title="Kubernetes API Server"></a>Kubernetes API Server</h4><p>API 服务提供 <a href="https://github.com/kubernetes/kubernetes/blob/release-1.2/docs/api.md" target="_blank" rel="noopener">Kubernetes API</a> 的服务。这个服务试图通过吧所有或者大部分的业务逻辑放到不两只的部件中从而使其具有 CRUD 特性。它主要处理 REST 操作，在 etcd 中验证更新这些对象 (并最终存储)。</p>
-<h4 id="scheduler"><a href="#scheduler" class="headerlink" title="scheduler"></a>scheduler</h4><p>调度器吧未调度的 pod 通过 binding api 绑定到节点上。调度器是可插拔的。并且我们期待支持多集群的调度，未来甚至希望可以支持用户自定义的调度。</p>
-<h4 id="Kubernetes-控制管理服务器"><a href="#Kubernetes-控制管理服务器" class="headerlink" title="Kubernetes 控制管理服务器"></a>Kubernetes 控制管理服务器</h4><p>所有其他的集群级别的功能目前都是由控制管理器所负责。例如，端点对象是被端点控制器来创建和更新。这些最终可以被分隔成不同的部件来让他们独自的可插拔。</p>
+<h4 id="kubernetes-控制面板">Kubernetes 控制面板</h4>
+<p>Kubernetes 控制面板可以分为多个部分。目前他们都运行在一个 <em>master</em> 节点，然而为了达到高可用性，这需要改变。不同部分一起协作提供一个统一的关于集群的视图。</p>
+<h4 id="etcd">etcd</h4>
+<p>所有 master 的持续状态都在 etcd 的一个实例中。这可以很好地存储配置数据。因为有 watch (观察者) 的支持，个部件协调中的改变可以很快被察觉。</p>
+<h4 id="kubernetes-api-server">Kubernetes API Server</h4>
+<p>API 服务提供 <a href="https://github.com/kubernetes/kubernetes/blob/release-1.2/docs/api.md" target="_blank" rel="noopener">Kubernetes API</a> 的服务。这个服务试图通过吧所有或者大部分的业务逻辑放到不两只的部件中从而使其具有 CRUD 特性。它主要处理 REST 操作，在 etcd 中验证更新这些对象 (并最终存储)。</p>
+<h4 id="scheduler">scheduler</h4>
+<p>调度器吧未调度的 pod 通过 binding api 绑定到节点上。调度器是可插拔的。并且我们期待支持多集群的调度，未来甚至希望可以支持用户自定义的调度。</p>
+<h4 id="kubernetes-控制管理服务器">Kubernetes 控制管理服务器</h4>
+<p>所有其他的集群级别的功能目前都是由控制管理器所负责。例如，端点对象是被端点控制器来创建和更新。这些最终可以被分隔成不同的部件来让他们独自的可插拔。</p>
 <p><a href="https://github.com/kubernetes/kubernetes/blob/release-1.2/docs/user-guide/replication-controller.md" target="_blank" rel="noopener">replicationscontroller</a> 是一种建立于简单的 <a href="https://www.kubernetes.org.cn/kubernetes-pod" target="_blank" rel="noopener">pod API</a> 之上的一种机制。一旦实现，我们最终计划把这变成一种通用的插件机制。</p>
 
         </div>
@@ -467,7 +475,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T16:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T17:10:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 9, 2019</p>
@@ -492,7 +500,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构
+Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
 
 查看高清无码图"
           
@@ -506,7 +515,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构
+Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
 
 查看高清无码图"
           
@@ -520,7 +530,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
+          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/&title=Kubernetes-设计架构 | JOKING&summary=Kubernetes 设计架构
+Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。
 
 查看高清无码图"
           
@@ -702,7 +713,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kubernetes-设计架构"><span class="toc-text">Kubernetes 设计架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes-节点"><span class="toc-text">Kubernetes 节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubelet"><span class="toc-text">kubelet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kube-proxy"><span class="toc-text">kube-proxy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes-控制面板"><span class="toc-text">Kubernetes 控制面板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#etcd"><span class="toc-text">etcd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes-API-Server"><span class="toc-text">Kubernetes API Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scheduler"><span class="toc-text">scheduler</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes-控制管理服务器"><span class="toc-text">Kubernetes 控制管理服务器</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#kubernetes-设计架构"><span class="toc-text">Kubernetes 设计架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#kubernetes-节点"><span class="toc-text">Kubernetes 节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubelet"><span class="toc-text">kubelet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kube-proxy"><span class="toc-text">kube-proxy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubernetes-控制面板"><span class="toc-text">Kubernetes 控制面板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#etcd"><span class="toc-text">etcd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubernetes-api-server"><span class="toc-text">Kubernetes API Server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scheduler"><span class="toc-text">scheduler</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubernetes-控制管理服务器"><span class="toc-text">Kubernetes 控制管理服务器</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -974,15 +985,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

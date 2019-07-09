@@ -402,13 +402,14 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h3 id="MongoDb-常用方法"><a href="#MongoDb-常用方法" class="headerlink" title="MongoDb 常用方法"></a>MongoDb 常用方法</h3><ol>
-<li><p>$regx: 值匹配</p>
+      <h3 id="mongodb-常用方法">MongoDb 常用方法</h3>
+<ol>
+<li>
+<p>$regx: 值匹配</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: <span class="string">'pattern'</span>, <span class="variable">$options</span>: <span class="string">'&lt;options&gt;'</span> &#125; &#125;</span><br><span class="line">&#123; &lt;field&gt;: &#123; <span class="variable">$regex</span>: /pattern/&lt;options&gt; &#125; &#125;</span><br></pre></td></tr></table></figure>
-
 <p>$options:</p>
 <ul>
-<li>i：    忽略大小写</li>
+<li>i：	忽略大小写</li>
 <li>m： For patterns that include anchors (i.e. <code>^</code> for the start, <code>$</code> for the end),If the pattern contains no anchors or if the string value has no newline characters (e.g. <code>\n</code>), the <code>m</code> option has no effect.（对于新的一行，m是不起作用的）</li>
 <li>x：“Extended” capability to ignore all white space characters in the <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex" target="_blank" rel="noopener"><code>$regex</code></a>pattern unless escaped or included in a character class.</li>
 <li>Allows the dot character (i.e. <code>.</code>) to match all characters <em>including</em> newline characters. For an example, see <a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#regex-dot-new-line" target="_blank" rel="noopener">Use the . Dot Character to Match New Line</a>.</li>
@@ -520,7 +521,9 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="Mongodb-中两个操作-Reduce-amp-Aggregate"><a href="#Mongodb-中两个操作-Reduce-amp-Aggregate" class="headerlink" title="Mongodb 中两个操作 Reduce &amp; Aggregate"></a>Mongodb 中两个操作 Reduce &amp; Aggregate</h2><h3 id="Map-Reduce"><a href="#Map-Reduce" class="headerlink" title="Map Reduce"></a>Map Reduce</h3><p>Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。</p>
+      <h2 id="mongodb-中两个操作-reduce-aggregate">Mongodb 中两个操作 Reduce &amp; Aggregate</h2>
+<h3 id="map-reduce">Map Reduce</h3>
+<p>Map-Reduce 是一种计算模型，简单的说就是将大批量的工作(数据) 分解 (MAP) 执行，然后再将结果合并成最终的结果 (REDUCE)。</p>
 <p>MongoDB 提供的 Map-Reduce 非常灵活，对于大规模数据分析也相当实用。</p>
 <hr>
       
@@ -892,15 +895,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times

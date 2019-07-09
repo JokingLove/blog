@@ -406,44 +406,48 @@
 <a id="more"></a>
 <ul>
 <li>需求：B要加入A的项目，不论是作为B的初始项目进行二次开发还是成为A项目的一员加入一起开发，步骤如下：</li>
-<li>1.B首先要fork一个。<br>B首先到A的github上，也就是此项目的位置:<a href="https://github.com/A/durit，然后单击fork，然后你（B）的github上就出现了一个fork，位置是：https://github.com/B/durit" target="_blank" rel="noopener">https://github.com/A/durit，然后单击fork，然后你（B）的github上就出现了一个fork，位置是：https://github.com/B/durit</a></li>
-<li>2.B把自己的fork克隆到本地。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/B/durit</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>1.B首先要fork一个。<br>
+B首先到A的github上，也就是此项目的位置:<a href="https://github.com/A/durit%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8D%95%E5%87%BBfork%EF%BC%8C%E7%84%B6%E5%90%8E%E4%BD%A0%EF%BC%88B%EF%BC%89%E7%9A%84github%E4%B8%8A%E5%B0%B1%E5%87%BA%E7%8E%B0%E4%BA%86%E4%B8%80%E4%B8%AAfork%EF%BC%8C%E4%BD%8D%E7%BD%AE%E6%98%AF%EF%BC%9Ahttps://github.com/B/durit" target="_blank" rel="noopener">https://github.com/A/durit，然后单击fork，然后你（B）的github上就出现了一个fork，位置是：https://github.com/B/durit</a></li>
+<li>2.B把自己的fork克隆到本地。</li>
 </ul>
-<p>(当你clone到本地，会有一个默认的远程名叫”origin”，它指向了fork on github，也就是B上的fork，而不是指向)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/B/durit</span><br></pre></td></tr></table></figure>
+<p>(当你clone到本地，会有一个默认的远程名叫&quot;origin&quot;，它指向了fork on github，也就是B上的fork，而不是指向)</p>
 <ul>
-<li>3.现在你是主人，为了保持与A的durit的联系，你需要给A的durit起个名，供你来驱使。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> durit</span><br><span class="line">$ git remote add upstream https://github.com/A/durit</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>3.现在你是主人，为了保持与A的durit的联系，你需要给A的durit起个名，供你来驱使。</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> durit</span><br><span class="line">$ git remote add upstream https://github.com/A/durit</span><br></pre></td></tr></table></figure>
 <p>(现在改名为upstream，这名随意，现在你（B）管A的durit叫upstream，以后B就用upstream来和A的durit联系了)</p>
 <ul>
-<li>4.获取A上的更新(但不会修改你的文件)。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>4.获取A上的更新(但不会修改你的文件)。</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br></pre></td></tr></table></figure>
 <p>（这不，现在B就用upstream来联系A了）</p>
 <ul>
-<li>5.合并拉取的数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>5.合并拉取的数据</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure>
 <p>（又联系了一次，upstream/master，前者是你要合并的数据，后者是你要合并到的数据（在这里就是B本地的durit了））</p>
 <ul>
-<li>6.在B修改了本地部分内容后，把本地的更改推送到B的远程github上。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add 修改过的文件</span><br><span class="line">$ git commit -m <span class="string">"注释"</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>6.在B修改了本地部分内容后，把本地的更改推送到B的远程github上。</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add 修改过的文件</span><br><span class="line">$ git commit -m <span class="string">"注释"</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
 <p>（目前为止，B上的github就跟新了）</p>
 <ul>
-<li><p>7.然后B还想让修改过的内容也推送到A上，这就要发起pull request了。<br>打开B的github,也就是<a href="https://github.com/B/durit" target="_blank" rel="noopener">https://github.com/B/durit</a><br>点击Pull Requests<br>单击new pull request<br>单击create pull request<br>输入title和你更改的内容<br>然后单击send pull request<br>这样B就完成了工作，然后就等着主人A来操作了。</p>
+<li>
+<p>7.然后B还想让修改过的内容也推送到A上，这就要发起pull request了。<br>
+打开B的github,也就是https://github.com/B/durit<br>
+点击Pull Requests<br>
+单击new pull request<br>
+单击create pull request<br>
+输入title和你更改的内容<br>
+然后单击send pull request<br>
+这样B就完成了工作，然后就等着主人A来操作了。</p>
 </li>
-<li><p>8.在B想要更新A的github上到内容时，结果冲突，因为B和A同时修改了文件，比如说是README.ME，该这样做：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status(查看冲突文件) //找到冲突文件(README.MD)后，打开并修改，解决冲突后</span><br><span class="line">$ git add README.MD</span><br><span class="line">$ git commit -m <span class="string">"解决了冲突文件README.MD"</span></span><br></pre></td></tr></table></figure>
-
+<li>
+<p>8.在B想要更新A的github上到内容时，结果冲突，因为B和A同时修改了文件，<a href="http://xn--README-hh4kn15fstl0j2f.ME" target="_blank" rel="noopener">比如说是README.ME</a>，该这样做：</p>
 </li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status(查看冲突文件) //找到冲突文件(README.MD)后，打开并修改，解决冲突后</span><br><span class="line">$ git add README.MD</span><br><span class="line">$ git commit -m <span class="string">"解决了冲突文件README.MD"</span></span><br></pre></td></tr></table></figure>
 <p>现在冲突解决了，可以更新A的内容了，也就是上面第4步和第5步</p>
 
         </div>
@@ -456,7 +460,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T16:48:13+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-09T17:10:47+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 9, 2019</p>
@@ -943,15 +947,14 @@
 </div> -->
   <div>
     <!-- 驱动 -->
-    This site is powered by
-    <a href="https://hexo.io/" target="_blank" class="codename">hexo</a>
-    &nbsp;|&nbsp;
-  
-    Use
+    <p>This site is powered by <a href="http://hexo.io/">Hexo</a> 🔥 Use <a href="https://xaoxuu.com/wiki/material-x/">Material-x</a> as theme</p>
+
+    <!-- <a href="https://hexo.io/" target="_blank" class="codename">hexo</a> -->
+    <!-- Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
-    as theme
+    as theme -->
     
-      , 
+      <!-- ,  -->
       total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
       times
