@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jokinglove.com/blog/"/>
-  <updated>2019-07-09T09:51:10.687Z</updated>
+  <updated>2019-07-11T01:16:00.368Z</updated>
   <id>https://jokinglove.com/blog/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://jokinglove.com/blog/2019/07/11/others/20190617-webservice/"/>
+    <id>https://jokinglove.com/blog/2019/07/11/others/20190617-webservice/</id>
+    <published>2019-07-11T01:16:00.368Z</published>
+    <updated>2019-07-11T01:16:00.368Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>spring boot 中的坑</title>
     <link href="https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/"/>
     <id>https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/</id>
     <published>2019-06-24T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.687Z</updated>
+    <updated>2019-07-09T10:55:26.452Z</updated>
     
     <summary type="html">
     
@@ -47,7 +69,7 @@
     <link href="https://jokinglove.com/blog/2019/06/14/kubernates/4.1%E5%88%9B%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/</id>
     <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.684Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -77,7 +99,7 @@
     <link href="https://jokinglove.com/blog/2019/06/12/kubernates/4.2%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     <id>https://jokinglove.com/blog/2019/06/12/kubernates/4.2操作练习/</id>
     <published>2019-06-11T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.684Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -101,7 +123,7 @@
     <link href="https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux常用命令/</id>
     <published>2019-06-10T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.686Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -127,7 +149,7 @@
     <link href="https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97/"/>
     <id>https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes的基础模块/</id>
     <published>2019-06-09T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.684Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -169,7 +191,7 @@
     <link href="https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/"/>
     <id>https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/</id>
     <published>2019-06-01T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.684Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -194,7 +216,7 @@
     <link href="https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-%E8%AE%A4%E8%AF%86%20Kubernetes/"/>
     <id>https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-认识 Kubernetes/</id>
     <published>2019-05-30T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.683Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -242,7 +264,7 @@
     <link href="https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-%E6%A6%82%E5%BF%B5/"/>
     <id>https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/</id>
     <published>2019-05-27T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.683Z</updated>
+    <updated>2019-07-09T10:55:26.448Z</updated>
     
     <summary type="html">
     
@@ -271,7 +293,7 @@
     <link href="https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/"/>
     <id>https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/</id>
     <published>2019-05-18T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.686Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -309,7 +331,7 @@
     <link href="https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/</id>
     <published>2019-05-16T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.685Z</updated>
+    <updated>2019-07-09T10:55:26.449Z</updated>
     
     <summary type="html">
     
@@ -344,7 +366,7 @@
     <link href="https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/"/>
     <id>https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/</id>
     <published>2019-05-15T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.685Z</updated>
+    <updated>2019-07-09T10:55:26.449Z</updated>
     
     <summary type="html">
     
@@ -370,7 +392,7 @@
     <link href="https://jokinglove.com/blog/2019/05/15/others/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2019/05/15/others/20190605-markdown常用语法/</id>
     <published>2019-05-14T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.684Z</updated>
+    <updated>2019-07-09T10:55:26.449Z</updated>
     
     <summary type="html">
     
@@ -394,7 +416,7 @@
     <link href="https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown常用语法/</id>
     <published>2019-05-14T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.688Z</updated>
+    <updated>2019-07-09T10:55:26.452Z</updated>
     
     <summary type="html">
     
@@ -418,7 +440,7 @@
     <link href="https://jokinglove.com/blog/2019/05/14/others/kafka/20190524-spring-kafka/"/>
     <id>https://jokinglove.com/blog/2019/05/14/others/kafka/20190524-spring-kafka/</id>
     <published>2019-05-13T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.686Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -457,7 +479,7 @@
     <link href="https://jokinglove.com/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/"/>
     <id>https://jokinglove.com/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/</id>
     <published>2019-05-12T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.687Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -491,7 +513,7 @@
     <link href="https://jokinglove.com/blog/2019/05/12/others/microservice/20190512-cat/"/>
     <id>https://jokinglove.com/blog/2019/05/12/others/microservice/20190512-cat/</id>
     <published>2019-05-11T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.687Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -525,7 +547,7 @@
     <link href="https://jokinglove.com/blog/2019/05/11/others/microservice/20190510-prometheus/"/>
     <id>https://jokinglove.com/blog/2019/05/11/others/microservice/20190510-prometheus/</id>
     <published>2019-05-10T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.687Z</updated>
+    <updated>2019-07-09T10:55:26.451Z</updated>
     
     <summary type="html">
     
@@ -560,10 +582,10 @@
   
   <entry>
     <title>spring容器初始化的几种方式</title>
-    <link href="https://jokinglove.com/blog/2019/04/25/others/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
-    <id>https://jokinglove.com/blog/2019/04/25/others/spring-容器初始化的几种方式/</id>
+    <link href="https://jokinglove.com/blog/2019/04/25/others/java/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>https://jokinglove.com/blog/2019/04/25/others/java/spring-容器初始化的几种方式/</id>
     <published>2019-04-24T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.688Z</updated>
+    <updated>2019-07-09T10:55:26.450Z</updated>
     
     <summary type="html">
     
@@ -580,10 +602,10 @@
   
   <entry>
     <title>spring容器初始化的几种方式</title>
-    <link href="https://jokinglove.com/blog/2019/04/25/others/java/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
-    <id>https://jokinglove.com/blog/2019/04/25/others/java/spring-容器初始化的几种方式/</id>
+    <link href="https://jokinglove.com/blog/2019/04/25/others/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>https://jokinglove.com/blog/2019/04/25/others/spring-容器初始化的几种方式/</id>
     <published>2019-04-24T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.686Z</updated>
+    <updated>2019-07-09T10:55:26.452Z</updated>
     
     <summary type="html">
     
@@ -595,31 +617,6 @@
     
     
       <category term="spring" scheme="https://jokinglove.com/blog/group/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python 学习笔记1</title>
-    <link href="https://jokinglove.com/blog/2018/07/22/others/python1/"/>
-    <id>https://jokinglove.com/blog/2018/07/22/others/python1/</id>
-    <published>2018-07-21T16:00:00.000Z</published>
-    <updated>2019-07-09T09:51:10.688Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h5 id=&quot;python3中有六个标准的数据类型：&quot;&gt;Python3中有六个标准的数据类型：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;字符串（String）&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;数字（Digit）&lt;/li&gt;
-&lt;li&gt;列表（List）&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="IT" scheme="https://jokinglove.com/blog/group/categories/IT/"/>
-    
-    
-      <category term="python" scheme="https://jokinglove.com/blog/group/tags/python/"/>
     
   </entry>
   
