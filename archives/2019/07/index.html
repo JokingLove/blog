@@ -312,14 +312,8 @@
       
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal no-title">
+            <div class='post-wrapper'>
+              <article class="post reveal ">
   
 
 
@@ -330,8 +324,8 @@
       
         
   <h2 class="title">
-    <a href="/blog/2019/07/11/others/20190617-webservice/">
-      2019-07-11
+    <a href="/blog/2019/07/10/others/20190617-webservice/">
+      Web Service 相关概念和总结
     </a>
   </h2>
 
@@ -359,7 +353,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-11</p>
+    <p>2019-07-10</p>
   </a>
 </div>
 
@@ -367,6 +361,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/IT/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>IT</p>
+    </a>
+  </div>
+
 
           
         
@@ -377,6 +379,13 @@
         
           
             
+  <div class="new-meta-item top-post">
+    <a class='notlink'>
+      <i class="fas fa-angle-double-up" aria-hidden="true"></i>
+      <p>Top</p>
+    </a>
+  </div>
+
 
           
         
@@ -397,74 +406,36 @@
 <p><font color="red">Web Service 是一种跨编程语言和跨操作系统平台的远程调用技术</font></p>
 <p>所谓跨编程语言和跨操作平台，就是说服务端程序采用 java 编写，客户端程序则可以采用其他的编程语言编写，反之亦然！跨操作系统平台是指服务端程序和客户端程序可以在不同的操作系统上运行。</p>
 <p>远程调用，是指一台计算机 a 上的一个程序可以调用到另外一台计算机 b 上的一个对象的方法。</p>
-<p>其实可以从多个角度来理解<br>
-WebService，从表面上看，WebService就是一个应用程序向外界暴露出一个能通过Web进行调用的API，也就是说能用编程的方法通过 Web来调用这个应用程序。我们把调用这个WebService的应用程序叫做客户端，而把提供这个WebService的应用程序叫做服务端。从深层次看，WebService是建立可互操作的分布式应用程序的新平台，是一个平台，是一套标准。它定义了应用程序如何在Web上实现互操作性，你可以用任何你喜欢的语言，在任何你喜欢的平台上写Web service ，只要我们可以通过Web service标准对这些服务进行查询和访问。</p>
-<p>WebService平台需要一套协议来实现分布式应用程序的创建。任何平台都有它的数据表示方法和类型系统。要实现互操作性，WebService平台必须提供一套标准的类型系统，用于沟通不同平台、编程语言和组件模型中的不同类型系统。Web service平台必须提供一种标准来描述 Web service，让客户可以得到足够的信息来调用这个Web service。最后，我们还必须有一种方法来对这个Web service进行远程调用,这种方法实际是一种远程过程调用协议(RPC)。为了达到互操作性，这种RPC协议还必须与平台和编程语言无关。</p>
-<h3 id="三-webservice-平台技术">三、WebService 平台技术</h3>
-<p>​	XML + XSD，SOAP 和 WSDL 就是构成 WebService 平台的三大技术。</p>
-<h4 id="3-1-xml-xsd">3.1、XML + XSD</h4>
-<p>​	WebService 采用 HTTP 协议传输数据，采用 XML 格式封装数据 (即 XML 中说明调用远程服务对象的哪个方法，传递的参数是什么，以及服务对象的返回结果是什么）。</p>
-<p>​	XML 是 WebService 平台中表示数据的格式。除了易于简历和易于分析外，XML 主要的有点在于它既是平台无关的，优势厂商无关的。无关性是比优越性更重要的：软件厂商是不会选择一个由竞争对手发明的技术。</p>
-<p>​	XML解决了数据表示的问题，但它没有定义一套标准的数据类型，更没有说怎么去扩展这套数据类型。例如，整形数到底代表什么？16位，32位，64位？这些细节对实现互操作性很重要。XML<br>
-Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标准的数据类型，并给出了一种语言来扩展这套数据类型。WebService平台就<br>
-是用XSD来作为其数据类型系统的。当你用某种语言(如VB.NET或C#)来构造一个Web service时，为了符合WebService标准，所<br>
-有你使用的数据类型都必须被转换为XSD类型。你用的工具可能已经自动帮你完成了这个转换，但你很可能会根据你的需要修改一下转换过程。</p>
-<h4 id="3-2-soap">3.2、SOAP</h4>
-<p>​	WebService 通过 HTTP 协议发送请求和接受结果时，发送的请求内容和结果内容都采用 XML 格式封装，并增加一些特定的 HTTP 消息头，以说明 HTTP 消息的内容格式，这些特定的 HTTP 消息头和 XML 内容格式就是 SOAP 协议。SOAP 协议提供了标准的 RPC 方法来调用 WebService。</p>
-<p><font color="red"><strong>SOAP协议 = HTTP协议 + XML 数据格式</strong></font></p>
-<p>​	SOAP协议定义了SOAP消息的格式，SOAP协议是基于HTTP协议的，SOAP也是基于XML和XSD的，XML是SOAP的数据编码方式。打个比<br>
-喻：HTTP就是普通公路，XML就是中间的绿色隔离带和两边的防护栏，SOAP就是普通公路经过加隔离带和防护栏改造过的高速公路。</p>
-<h4 id="3-3-wsdl">3.3、 WSDL</h4>
-<p>好比我们去商店买东西，首先要知道商店里有什么东西可买，然后再来购买，商家的做法就是张贴广告海报。   WebService也一样，WebService客户端要调用一个WebService服务，首先要有知道这个服务的地址在哪，以及这个服务里有什么方   法可以调用，所以，WebService务器端首先要通过一个WSDL文件来说明自己家里有啥服务可以对外调用，服务是什么（服务中有哪些方法，方法接受  的参数是什么，返回值是什么），服务的网络地址用哪个url地址表示，服务通过什么方式来调用。</p>
-<p>WSDL(Web Services Description  Language)就是这样一个基于XML的语言，用于描述Web Service及其函数、参数和返回值。它是WebService客户端和服务器端都  能理解的标准格式。因为是基于XML的，所以WSDL既是机器可阅读的，又是人可阅读的，这将是一个很大的好处。一些最新的开发工具既能根据你的  Web service生成WSDL文档，又能导入WSDL文档，生成调用相应WebService的代理类代码。</p>
-<p>WSDL  文件保存在Web服务器上，通过一个url地址就可以访问到它。客户端要调用一个WebService服务之前，要知道该服务的WSDL文件的地址。  WebService服务提供商可以通过两种方式来暴露它的WSDL文件地址：1.注册到UDDI服务器，以便被人查找；2.直接告诉给客户端调用者。</p>
-<h3 id="四-webservice-开发">四、WebService 开发</h3>
-<p>​	WebService 开发可以分为服务器端开发和客户端开发两个方面</p>
-<h4 id="4-1-服务端开发">4.1、服务端开发</h4>
-<p>​	把公司内部系统的业务方法发布成 WebService 服务，供远程合作单位和个人调用。(借助一些 WebService 框架可以很轻松地吧自己的业务对象发布成 WebService 服务，Java 方面的典型 WebService 框架包括：axis，小fire，cxf 等，java ee 服务器通常也支持发布 WebService 服务，例如 JBOSS。)</p>
-<h4 id="4-2-客户端开发">4.2、客户端开发</h4>
-<p>​	调用别人发布的WebService服务，大多数人从事的开发都属于这个方面，例如，调用天气预报WebService服务。（使用厂<br>
-商的WSDL2Java之类的工具生成静态调用的代理类代码；使用厂商提供的客户端编程API类；使用SUN公司早期标准的jax-rpc开发包；使用SUN公司最新标准的jax-ws开发包。当然SUN已被ORACLE收购)</p>
-<h4 id="4-3-webservice-的工作调用原理">4.3、WebService 的工作调用原理</h4>
-<p>​	对客户端而言，我们给这各类WebService客户端API传递wsdl文件的url地址，这些API就会创建出底层的代理类，我调用这些代理，就可以访问到webservice服务。代理类把客户端的方法调用变成soap格式的请求数据再通过HTTP协议发出去，并把接收到的soap 数据变成返回值返回。对服务端而言，各类WebService框架的本质就是一个大大的Servlet，当远程调用客户端给它通过http协议发送过来soap格式的请求数据时，它分析这个数据，就知道要调用哪个java类的哪个方法，于是去查找或创建这个对象，并调用其方法，再把方法返回的结果包装成soap格式的数据，通过http响应消息回给客户端。</p>
-<h3 id="五-使用场景">五、使用场景</h3>
-<h4 id="1-跨防火墙通信">1、跨防火墙通信</h4>
-<p>​	如果应用程序有成千上万的用户，而且分布在世界各地，那么客户端和服务器之间的通信将是一个棘手的问题。因为客户端和服务器之间通常会有防火墙或者代理服<br>
-务器。在这种情况下，使用DCOM就不是那么简单，通常也不便于把客户端程序发布到数量如此庞大的每一个用户手中。传统的做法是，选择用浏览器作为客户端，写下一大堆ASP页面，把应用程序的中间层暴露给最终用户。这样做的结果是开发难度大，程序很难维护。如果中间层组件换成WebService的话，就可以从用户界面直接调用中间层组件。从大多数人的经验来看，在一个用户界面和中间层有较多交互的应用程序中，使用WebService这种结构，可以节省花在用户界面编程上20%的开发时间。</p>
-<h4 id="2-应用程序集成">2、应用程序集成</h4>
-<p>​	企业级的应用程序开发者都知道，企业里经常都要把用不同语言写成的、在不同平台上运行的各种程序集成起来，而这种集成将花费很大的开发力量。应用程序经常需要从运行在IBM主机上的程序中获取数据；或者把数据发送到主机或UNIX应用程序中去。即使在同一个平台上，不同软件厂商生产的各种软件也常常需要集成起来。通过WebService，可以很容易的集成不同结构的应用程序。</p>
-<h4 id="3-b2b-集成">3、B2B 集成</h4>
-<p>用WebService集成应用程序，可以使公司内部的商务处理更加自动化。但当交易跨越供应商和客户、突破公司的界限时会怎么样呢？跨公司的商务交易集成通常叫做B2B集成。WebService是B2B集成成功的关键。通过WebService，公司可以把关键的商务应用“暴露”给指定的供应商和客户。例如，把电子下单系统和电子发票系统“暴露”出来，客户就可以以电子的方式发送订单，供应商则可以以电子的方式发送原料采购发票。当然，这并不是一个新的概念，EDI(电子文档交换)早就是这样了。但是，WebService的实现要比EDI简单得多，而且WebService运行在Internet上，在世界任何地方都可轻易实现，其运行成本就相对较低。不过，WebService并不像EDI那样，是文档交换或B2B集成的完整解决方案。 WebService只是B2B集成的一个关键部分，还需要许多其它的部分才能实现集成。</p>
-<p>​	用WebService来实现B2B集成的最大好处在于可以轻易实现互操作性。只要把商务逻辑“暴露”出来，成为WebService，就可以让任何指定的合作伙伴调用这些商务逻辑，而不管他们的系统在什么平台上运行，使用什么开发语言。这样就大大减少了花在B2B集成上的时间和成本，让许多原本无法承受EDI的中小企业也能实现B2B集成。</p>
-<h4 id="4-软件和数据重用">4、软件和数据重用</h4>
-<p>​      软件重用是一个很大的主题，重用的形式很多，重用的程度有大有小。最基本的形式是源代码模块或者类一级的重用，一种形式是二进制形式的组件重用。采用 WebService应用程序可以用标准的方法把功能和数据“暴露”出来，供其它应用程序使用，达到业务级重用。</p>
-<h3 id="六-不适用场合">六、不适用场合</h3>
-<h4 id="1-单机应用程序">1、单机应用程序</h4>
-<p>​	目前，企业和个人还使用着很多桌面应用程序。其中一些只需要与本机上的其它程序通信。在这种情况下，最好就不要用WebService，只要用本地的API就可以了。COM非常适合于在这种情况下工作，因为它既小又快。运行在同一台服务器上的服务器软件也是这样。最好直接用COM或其它本地的API来进行应用程序间的调用。当然WebService也能用在这些场合，但那样不仅消耗太大，而且不会带来任何好处。</p>
-<h4 id="2-局域网的同构应用程序">2、局域网的同构应用程序</h4>
-<p>在许多应用中，所有的程序都是用VB或VC开发的，都在Windows平台下使用COM，都运行在同一个局域网上。例如，有两个服务器应用程序需要相互通信，或者有一个Win32或WinForm的客户程序要连接局域网上另一个服务器的程序。在这些程序里，使用DCOM会比SOAP/HTTP有效得多。与此相类似，如果一个.NET程序要连接到局域网上的另一个.NET程序，应该使.NETremoting。有趣的是，在.NETremoting 中，也可以指定使用SOAP/HTTP来进行WebService调用。不过最好还是直接通过TCP进行RPC调用，那样会有效得多。</p>
-<h3 id="七-编码中的一些概念">七、编码中的一些概念</h3>
-<h4 id="1-port-type">1、Port Type</h4>
-<p>​	事实上，一个 WebService 并不是直接包含一组 operation(方法)。方法是被组成换一个或多个 <strong>Port Type</strong>。</p>
-<p>一个 Port Type 类似 Java 类，每个 operation 类似 java class 中的静态方法。</p>
-<p>比如，一个web service中，把所有string相关操作组成 <strong>stringUtil</strong> Port type, 把日期相关的操作组成<strong><em>dateUtil</em></strong> Port Type.</p>
-<p>所有 port type的命名必须是QName.  （QName 就是需要有 namespace和localname的全名称， 见上篇的图示）</p>
-<h4 id="2-binding">2、Binding</h4>
-<p>一个 port type 允许使用不同的信息格式访问，比如SOAP(Simple Object Access Protocal)或<br>
-普通文本格式(plain text fomat):</p>
-<p>concat(s1=‘abc’, s2=‘123’)</p>
-<p>除了信息格式，每个port type还允许使用信息通过HTTP Post 请求或者 通过 email方式传送。</p>
-<p>因此，每个被支持的信息格式和信息传送方式组合，就叫做 binding.<font color="red"><strong>最常见的binding就是 SOAP+HTTP.</strong></font></p>
-<h4 id="3-port">3、Port</h4>
-<p>假如很多人使用你的web service,你决定把你的web service部署到3台机器上(C1,C2,C3)。部署策略为：采用binding1于C1,C2,C3 机器上；采用binding2于C3机器上.此时，我们就说，你一共有四个port, 其中3个port使用用binding1, 1个port使用binding2.</p>
-
+      
+        <div class="readmore">
+          <a href="/blog/2019/07/10/others/20190617-webservice/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>IT</a>
+        
+          <a href="/blog/group/tags/webservice/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>webservice</a>
+        
+          <a href="/blog/group/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>java</a>
+        
+      </div>
     
   </section>
 </article>
 
-          </div>
+            </div>
+          
+        
+      
+    
+    
+      
         
       
     
@@ -660,7 +631,7 @@ Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标
     <div class='content pure'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/blog/group/categories/IT/" href="/blog/group/categories/IT/"><div class='name'>IT</div><div class='badge'>(17)</div></a></li>
+          <li><a class="flat-box" title="/blog/group/categories/IT/" href="/blog/group/categories/IT/"><div class='name'>IT</div><div class='badge'>(18)</div></a></li>
         
           <li><a class="flat-box" title="/blog/group/categories/kubernetes/" href="/blog/group/categories/kubernetes/"><div class='name'>kubernetes</div><div class='badge'>(6)</div></a></li>
         
@@ -699,7 +670,7 @@ Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标
 </header>
 
     <div class='content pure'>
-      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 16.5px; color: #888">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16.5px; color: #888">tools</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 16.5px; color: #888">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
+      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 16.5px; color: #888">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16.5px; color: #888">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 16.5px; color: #888">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
     </div>
   </section>
 
