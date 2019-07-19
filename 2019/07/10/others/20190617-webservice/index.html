@@ -499,10 +499,10 @@ Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-11T19:31:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-18T17:27:41+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 11, 2019</p>
+    <p>last updated at Jul 18, 2019</p>
   </a>
 </div>
 
@@ -1114,9 +1114,9 @@ Web Service 是一种跨编程语言和跨操作系统平台的远程调用技�
 
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
   <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/gitalk.css"> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@1.1.4/dist/gitalk.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@lastest/dist/gitalk.min.css">
   <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@1.1.4/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@lastest/dist/gitalk.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
   <!-- <script src="../js/gitalk.min.js"></script> -->
   <script type="text/javascript">
@@ -1129,18 +1129,18 @@ Web Service 是一种跨编程语言和跨操作系统平台的远程调用技�
       
         id: location.pathname.length >= 50 ? md5(location.pathname) : location.pathname,      // Ensure uniqueness and length less than 50
       
-      distractionFreeMode: false,  // Facebook-like distraction free mode
+      distractionFreeMode: true,  // Facebook-like distraction free mode
       flipMoveOptions: {
         staggerDelayBy: 150,
         appearAnimation: 'accordionVertical',
         enterAnimation: 'fade',
         leaveAnimation: 'fade',
       },
-      language: 'zh-CN'
+      language: 'zh-CN',
+      pagerDirection: 'last',
+      enableHotKey: true // cmd | ctrl + enter
     });
     gitalk.render('gitalk-container');
-    // gitalk 没有提供  placeholder 功能，所以就自己写喽
-    // 
   </script>
 
 
