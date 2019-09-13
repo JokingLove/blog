@@ -255,6 +255,115 @@
       
         
   <h2 class="title">
+    <a href="/blog/2019/06/02/kubernates/3.kubernetes-设计架构/">
+      Kubernetes-设计架构
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-06-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/kubernetes/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>kubernetes</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="kubernetes-设计架构">Kubernetes 设计架构</h2>
+<p>Kubernetes 集群包含有节点代理 kubelet 和 Master 组件 (APIs, scheduler, etc)，一切都基于分布式存储系统。下面这张图是 Kubernetes 的结构图。</p>
+<p><img src="https://raw.githubusercontent.com/JokingLove/NoteBook/master/image/20190604094531.png" alt="架构图"></p>
+<p><a href="https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.2/docs/design/architecture.png" target="_blank" rel="noopener">查看高清无码图</a></p>
+      
+        <div class="readmore">
+          <a href="/blog/2019/06/02/kubernates/3.kubernetes-设计架构/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>IT</a>
+        
+          <a href="/blog/group/tags/kubernetes/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>kubernetes</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/blog/2019/05/31/kubernates/2.kubernetes-认识 Kubernetes/">
       Kubernetes-认识 Kubernetes
     </a>
@@ -1069,124 +1178,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/">
-      Spring Boot 整合 ElasticSearch 入门
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://jokinglove.com/blog" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>JOKING</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-13</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/group/categories/IT/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>IT</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h3 id="spring-boot-整合-elasticsearch-入门">Spring Boot 整合 ElasticSearch 入门</h3>
-<p>​	利用 spring data elasticsearch 模块来对 elasticsearch 进行基础的增删改查，elasticsearch 利用 docker 的方式启动运行。</p>
-<h4 id="启动-elasticsearch">启动 elasticsearch</h4>
-<h6 id="下载-elasticsearch-的-docker-镜像：">下载 elasticsearch 的 docker 镜像：</h6>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
-<h6 id="以开发模式运行-elasticsearch-的-docker-容器：">以开发模式运行 elasticsearch 的 docker 容器：</h6>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 9200:9200 -p 9300:9300 -e <span class="string">"discovery.type=single-node"</span> docker.elastic.co/elasticsearch/elasticsearch:6.7.2</span><br></pre></td></tr></table></figure>
-      
-        <div class="readmore">
-          <a href="/blog/2019/05/13/others/microservice/20190524-spring-boot-elasticsearch/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>IT</a>
-        
-          <a href="/blog/group/tags/大数据/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>大数据</a>
-        
-          <a href="/blog/group/tags/springboot/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>springboot</a>
-        
-          <a href="/blog/group/tags/ES/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>ES</a>
-        
-          <a href="/blog/group/tags/搜索/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>搜索</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1202,7 +1193,7 @@
             </a>
           
           <p class="current">
-            2 / 4
+            2 / 5
           </p>
           
             <a class="next" rel="next" href="/blog/page/3/">
@@ -1406,7 +1397,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 14px; color: #999">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
+      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 16.5px; color: #888">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 14px; color: #999">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
     </div>
   </section>
 
