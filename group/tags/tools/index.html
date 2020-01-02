@@ -315,9 +315,132 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/01/02/others/tools/20200102-centos8网络设置/">
+      Centos8 网络配置
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <img src="https://avatars2.githubusercontent.com/u/18134074?s=460&v=4">
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-01-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/linux/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>linux</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>刚安装好的 Centos8 发现没网，用命令  <code>ip addr</code> 查看返回如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/linux-ipaddr.png" alt></p>
+<p>我们发现，只有 lo，ens33 的网卡中没有 IP，一般情况，就电脑启动的时候，没有激活网卡 ens33，通过以下几步我们可以解决这个问题：</p>
+<ul>
+<li>1、打开 <code>/etc/sysconfig/network-scripts/ifcfg-ens33</code>文件：</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/20200102104901-linux-ifcfg-ens33.png" style="zoom:80%;">
+<ul>
+<li>
+<p>2、图中 <code>NOBOOT=no</code>, 代表开启不自动启动网卡  ens33，我们修改为 <code>NOBOOT=yes</code>,  <code>BOOTPROTO=dhcp</code> 代表自动获取 ip。</p>
+</li>
+<li>
+<p>3、重启加载网络配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli connection reload</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>4、重新执行 <code>ip addr</code> 查看结果如下，网络正常。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/20200102105517-ip-result.png" alt></p>
+</li>
+<li>
+<p>5、显示所有网络设备详情信息</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli device show</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/20200102105753-netdevices.png" style="zoom:50%;">
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/group/tags/tools/" rel="nofollow"><i class="fas fa-tag fa-fw"></i>tools</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -624,7 +747,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 16.5px; color: #888">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 14px; color: #999">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/zookeeper/" style="font-size: 14px; color: #999">zookeeper</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
+      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 16.5px; color: #888">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16.5px; color: #888">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16.5px; color: #888">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16.5px; color: #888">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 16.5px; color: #888">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 21.5px; color: #666">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16.5px; color: #888">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16.5px; color: #888">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16.5px; color: #888">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16.5px; color: #888">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/zookeeper/" style="font-size: 14px; color: #999">zookeeper</a> <a href="/blog/group/tags/大数据/" style="font-size: 19px; color: #777">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16.5px; color: #888">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16.5px; color: #888">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
     </div>
   </section>
 
