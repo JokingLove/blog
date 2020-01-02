@@ -404,6 +404,7 @@
         <div class="article-entry" itemprop="articleBody">
           <p>刚安装好的 Centos8 发现没网，用命令  <code>ip addr</code> 查看返回如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/linux-ipaddr.png" alt></p>
+<a id="more"></a>
 <p>我们发现，只有 lo，ens33 的网卡中没有 IP，一般情况，就电脑启动的时候，没有激活网卡 ens33，通过以下几步我们可以解决这个问题：</p>
 <ul>
 <li>1、打开 <code>/etc/sysconfig/network-scripts/ifcfg-ens33</code>文件：</li>
@@ -419,11 +420,11 @@
 </li>
 <li>
 <p>4、重新执行 <code>ip addr</code> 查看结果如下，网络正常。</p>
+</li>
+</ul>
 <p><img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/20200102105517-ip-result.png" alt></p>
-</li>
-<li>
-<p>5、显示所有网络设备详情信息</p>
-</li>
+<ul>
+<li>5、显示所有网络设备详情信息</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli device show</span><br></pre></td></tr></table></figure>
 <img src="https://cdn.jsdelivr.net/gh/jokinglove/cdn-assets@master/image/20200102105753-netdevices.png" style="zoom:50%;">
@@ -437,7 +438,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-02T10:59:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-02T11:10:29+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jan 2, 2020</p>
@@ -462,7 +463,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=刚安装好的 Centos8 发现没网，用命令  ip addr 查看返回如下：
+"
           
           >
           
@@ -474,7 +476,8 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=刚安装好的 Centos8 发现没网，用命令  ip addr 查看返回如下：
+"
           
           >
           
@@ -486,7 +489,8 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
+          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2020/01/02/others/tools/20200102-centos8网络设置/&title=Centos8 网络配置 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=刚安装好的 Centos8 发现没网，用命令  ip addr 查看返回如下：
+"
           
           >
           
