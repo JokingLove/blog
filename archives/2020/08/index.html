@@ -313,9 +313,168 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal no-title">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2020/08/20/others/java/mongo查询优化/">
+      2020-08-20
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <img src="https://avatars2.githubusercontent.com/u/18134074?s=460&v=4">
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-08-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="mongo查询优化">mongo查询优化</h2>
+<blockquote>
+<p>优化方向：</p>
+<ul>
+<li>加索引</li>
+<li>pipeline 修改为  map-reduce</li>
+<li></li>
+</ul>
+</blockquote>
+<h3 id="一-执行脚本">一、执行脚本</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.aggregate(</span><br><span class="line">    [&#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;</span><br><span class="line">            <span class="string">"institute_id"</span>: &#123;</span><br><span class="line">                <span class="string">"$in"</span>: [<span class="string">"058"</span>, <span class="string">"059"</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"exam_date"</span>: &#123;</span><br><span class="line">                <span class="string">"$gte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1590940800000</span>),</span><br><span class="line">                <span class="string">"$lte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1593619199000</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index.exam_items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"item_examination"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"items"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"collecting_sample"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$exam_item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"collects"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items.item_indexes"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$project"</span>: &#123;</span><br><span class="line">            <span class="string">"instituteId"</span>: <span class="string">"$institute_id"</span>,</span><br><span class="line">            <span class="string">"workNo"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">            <span class="string">"examDate"</span>: <span class="string">"$exam_date"</span>,</span><br><span class="line">            <span class="string">"itemIndex"</span>: <span class="string">"$items.item_indexes"</span>,</span><br><span class="line">            <span class="string">"examinationIndex"</span>: <span class="string">"$examination_index"</span>,</span><br><span class="line">            <span class="string">"customer"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"collects"</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;&#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$count"</span>: <span class="string">"count"</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="二-环境分析">二、环境分析</h3>
+<ul>
+<li>
+<p>1.mongo版本： Mongo 4.0.1</p>
+</li>
+<li>
+<p>2.索引</p>
+<ul>
+<li>
+<p>medical_examination_info  、 item_examination 、 collecting_sample 三个集合中都有以下索引</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.item_examination.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "item_id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.collecting_sample.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "exam_item_id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="三-执行过程">三、执行过程</h3>
+<ul>
+<li>
+<p>直接执行时间</p>
+<ul>
+<li>29.6s</li>
+</ul>
+</li>
+<li>
+<p>将 institute_id 放在  exam_date 匹配后面，关联条件删除  institute_id执行时间</p>
+<ul>
+<li>很久很久…</li>
+</ul>
+</li>
+<li>
+<p>添加索引下面索引：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>29.5s</li>
+</ul>
+</li>
+<li>
+<p>添加下面索引：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>30s</li>
+</ul>
+</li>
+<li>
+<p>单表查询（删除两个lookup）</p>
+<ul>
+<li>0.767s</li>
+</ul>
+</li>
+<li>
+<p>删除 lookup 的collecting_sample</p>
+<ul>
+<li>16s</li>
+</ul>
+</li>
+<li>
+<p>in改为or</p>
+<ul>
+<li>31.8s</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+  </section>
+</article> 
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -624,7 +783,7 @@
 </header>
 
     <div class='content [object Object]'>
-      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 18px; color: #7e7e7e">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16px; color: #8b8b8b">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16px; color: #8b8b8b">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16px; color: #8b8b8b">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 18px; color: #7e7e7e">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 22px; color: #636363">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16px; color: #8b8b8b">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16px; color: #8b8b8b">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16px; color: #8b8b8b">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16px; color: #8b8b8b">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/zookeeper/" style="font-size: 14px; color: #999">zookeeper</a> <a href="/blog/group/tags/多线程/" style="font-size: 14px; color: #999">多线程</a> <a href="/blog/group/tags/大数据/" style="font-size: 20px; color: #707070">大数据</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16px; color: #8b8b8b">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16px; color: #8b8b8b">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
+      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 18px; color: #7e7e7e">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16px; color: #8b8b8b">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16px; color: #8b8b8b">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/git/" style="font-size: 16px; color: #8b8b8b">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 18px; color: #7e7e7e">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 22px; color: #636363">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16px; color: #8b8b8b">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16px; color: #8b8b8b">microservice</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 16px; color: #8b8b8b">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16px; color: #8b8b8b">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/zookeeper/" style="font-size: 14px; color: #999">zookeeper</a> <a href="/blog/group/tags/多线程/" style="font-size: 14px; color: #999">多线程</a> <a href="/blog/group/tags/大数据/" style="font-size: 20px; color: #707070">大数据</a> <a href="/blog/group/tags/并发/" style="font-size: 14px; color: #999">并发</a> <a href="/blog/group/tags/搜索/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/监控/" style="font-size: 16px; color: #8b8b8b">监控</a> <a href="/blog/group/tags/编码规范/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/设计模式/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/随记/" style="font-size: 16px; color: #8b8b8b">随记</a> <a href="/blog/group/tags/集群/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/面向对象/" style="font-size: 14px; color: #999">面向对象</a>
     </div>
   </section>
 
