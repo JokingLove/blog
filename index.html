@@ -386,168 +386,9 @@
         
           
         
-          
-        
       
     
     
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal no-title">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/blog/2020/09/02/others/java/mongo查询优化/">
-      2020-09-02
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://jokinglove.com/blog" rel="nofollow">
-      
-        <img src="https://avatars2.githubusercontent.com/u/18134074?s=460&v=4">
-      
-      <p>JOKING</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-02</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="mongo查询优化">mongo查询优化</h2>
-<blockquote>
-<p>优化方向：</p>
-<ul>
-<li>加索引</li>
-<li>pipeline 修改为  map-reduce</li>
-<li></li>
-</ul>
-</blockquote>
-<h3 id="一-执行脚本">一、执行脚本</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.aggregate(</span><br><span class="line">    [&#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;</span><br><span class="line">            <span class="string">"institute_id"</span>: &#123;</span><br><span class="line">                <span class="string">"$in"</span>: [<span class="string">"058"</span>, <span class="string">"059"</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"exam_date"</span>: &#123;</span><br><span class="line">                <span class="string">"$gte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1590940800000</span>),</span><br><span class="line">                <span class="string">"$lte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1593619199000</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index.exam_items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"item_examination"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"items"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"collecting_sample"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$exam_item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"collects"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items.item_indexes"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$project"</span>: &#123;</span><br><span class="line">            <span class="string">"instituteId"</span>: <span class="string">"$institute_id"</span>,</span><br><span class="line">            <span class="string">"workNo"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">            <span class="string">"examDate"</span>: <span class="string">"$exam_date"</span>,</span><br><span class="line">            <span class="string">"itemIndex"</span>: <span class="string">"$items.item_indexes"</span>,</span><br><span class="line">            <span class="string">"examinationIndex"</span>: <span class="string">"$examination_index"</span>,</span><br><span class="line">            <span class="string">"customer"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"collects"</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;&#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$count"</span>: <span class="string">"count"</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h3 id="二-环境分析">二、环境分析</h3>
-<ul>
-<li>
-<p>1.mongo版本： Mongo 4.0.1</p>
-</li>
-<li>
-<p>2.索引</p>
-<ul>
-<li>
-<p>medical_examination_info  、 item_examination 、 collecting_sample 三个集合中都有以下索引</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.item_examination.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "item_id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.collecting_sample.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "exam_item_id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="三-执行过程">三、执行过程</h3>
-<ul>
-<li>
-<p>直接执行时间</p>
-<ul>
-<li>29.6s</li>
-</ul>
-</li>
-<li>
-<p>将 institute_id 放在  exam_date 匹配后面，关联条件删除  institute_id执行时间</p>
-<ul>
-<li>很久很久…</li>
-</ul>
-</li>
-<li>
-<p>添加索引下面索引：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>29.5s</li>
-</ul>
-</li>
-<li>
-<p>添加下面索引：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>30s</li>
-</ul>
-</li>
-<li>
-<p>单表查询（删除两个lookup）</p>
-<ul>
-<li>0.767s</li>
-</ul>
-</li>
-<li>
-<p>删除 lookup 的collecting_sample</p>
-<ul>
-<li>16s</li>
-</ul>
-</li>
-<li>
-<p>in改为or</p>
-<ul>
-<li>31.8s</li>
-</ul>
-</li>
-<li></li>
-</ul>
-
-      
-    </div>
-    
-  </section>
-</article> 
-
-          </div>
-        
       
         
           <div class='post-wrapper'>
@@ -1370,6 +1211,138 @@
       <div class="full-width auto-padding tags">
         
           <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-tag fa-fw"></i>&nbsp;IT</a>
+        
+      </div>
+    
+  </section>
+</article> 
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/APlayer.min.css"> -->
+  <div class="aplayer"
+    data-theme=""
+    data-mini=true 
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="song"
+    data-id="1336856777"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/blog/2019/07/10/others/20190617-webservice/">
+      Web Service 相关概念和总结
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <img src="https://avatars2.githubusercontent.com/u/18134074?s=460&v=4">
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-10</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/IT/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>IT</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="web-service-相关概念和总结">Web Service 相关概念和总结</h2>
+<h3 id="一-序言">一. 序言</h3>
+<p>序言什么的都不重要……</p>
+<h3 id="二-web-service-是什么">二、Web Service 是什么</h3>
+<p><font color="red">Web Service 是一种跨编程语言和跨操作系统平台的远程调用技术</font></p>
+<p>所谓跨编程语言和跨操作平台，就是说服务端程序采用 java 编写，客户端程序则可以采用其他的编程语言编写，反之亦然！跨操作系统平台是指服务端程序和客户端程序可以在不同的操作系统上运行。</p>
+<p>远程调用，是指一台计算机 a 上的一个程序可以调用到另外一台计算机 b 上的一个对象的方法。</p>
+      
+        <div class="readmore">
+          <a href="/blog/2019/07/10/others/20190617-webservice/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/blog/group/tags/IT/" rel="nofollow"><i class="fas fa-tag fa-fw"></i>&nbsp;IT</a>
+        
+          <a href="/blog/group/tags/webservice/" rel="nofollow"><i class="fas fa-tag fa-fw"></i>&nbsp;webservice</a>
+        
+          <a href="/blog/group/tags/java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i>&nbsp;java</a>
         
       </div>
     
