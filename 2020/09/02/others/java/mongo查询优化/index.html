@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>类与类之间的关系 | JOKING</title>
+  <title>JOKING</title>
   
   <meta name="keywords" content="blog,joking,博客，programmer,jokinglove,JOKING,JOKINGLOVE,java,JAVASCRIPT">
   
@@ -320,8 +320,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2017/08/01/others/class-relationship/">
-        类与类之间的关系
+      <a href="/blog/2020/09/02/others/java/mongo查询优化/">
+        2020-09-02
       </a>
     </h1>
   
@@ -350,7 +350,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-08-01</p>
+    <p>2020-09-02</p>
   </a>
 </div>
 
@@ -358,14 +358,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/group/categories/IT/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>IT</p>
-    </a>
-  </div>
-
 
           
         
@@ -402,49 +394,79 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>在面向对象分析的过程中，我们常常会首先分析类与类之间有什么关系，然后设计出合理的类结构，尽量达到低耦合，高内聚。使得程序的可扩展性更高，下面简单的总结一下在面向对象的世界里类与类之间的关系。</p>
-<a id="more"></a>
+          <h2 id="mongo查询优化">mongo查询优化</h2>
+<blockquote>
+<p>优化方向：</p>
+<ul>
+<li>加索引</li>
+<li>pipeline 修改为  map-reduce</li>
+<li></li>
+</ul>
+</blockquote>
+<h3 id="一-执行脚本">一、执行脚本</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.aggregate(</span><br><span class="line">    [&#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;</span><br><span class="line">            <span class="string">"institute_id"</span>: &#123;</span><br><span class="line">                <span class="string">"$in"</span>: [<span class="string">"058"</span>, <span class="string">"059"</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"exam_date"</span>: &#123;</span><br><span class="line">                <span class="string">"$gte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1590940800000</span>),</span><br><span class="line">                <span class="string">"$lte"</span>: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1593619199000</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$examination_index.exam_items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"item_examination"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"items"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">            <span class="string">"from"</span>: <span class="string">"collecting_sample"</span>,</span><br><span class="line">            <span class="string">"let"</span>: &#123;</span><br><span class="line">                <span class="string">"work_no"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">                <span class="string">"item_id"</span>: <span class="string">"$examination_index.exam_items.id"</span>,</span><br><span class="line">                <span class="string">"institute_id"</span>: <span class="string">"$institute_id"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">"pipeline"</span>: [&#123;</span><br><span class="line">                <span class="string">"$match"</span>: &#123;</span><br><span class="line">                    <span class="string">"$expr"</span>: &#123;</span><br><span class="line">                        <span class="string">"$and"</span>: [&#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$institute_id"</span>, <span class="string">"$$institute_id"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$work_no"</span>, <span class="string">"$$work_no"</span>]</span><br><span class="line">                        &#125;, &#123;</span><br><span class="line">                            <span class="string">"$eq"</span>: [<span class="string">"$exam_item_id"</span>, <span class="string">"$$item_id"</span>]</span><br><span class="line">                        &#125;]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="string">"as"</span>: <span class="string">"collects"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$unwind"</span>: <span class="string">"$items.item_indexes"</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$project"</span>: &#123;</span><br><span class="line">            <span class="string">"instituteId"</span>: <span class="string">"$institute_id"</span>,</span><br><span class="line">            <span class="string">"workNo"</span>: <span class="string">"$work_no"</span>,</span><br><span class="line">            <span class="string">"examDate"</span>: <span class="string">"$exam_date"</span>,</span><br><span class="line">            <span class="string">"itemIndex"</span>: <span class="string">"$items.item_indexes"</span>,</span><br><span class="line">            <span class="string">"examinationIndex"</span>: <span class="string">"$examination_index"</span>,</span><br><span class="line">            <span class="string">"customer"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"collects"</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$match"</span>: &#123;&#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        <span class="string">"$count"</span>: <span class="string">"count"</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="二-环境分析">二、环境分析</h3>
 <ul>
 <li>
-<p>1、泛化关系(generalization)<br>
-类的继承结构表现在UML中为：泛化(generalize)与实现(realize)：<br>
-继承关系为 is-a的关系；两个对象之间如果可以用 is-a 来表示，就是继承关系：（…是…)<br>
-eg：自行车是车、猫是动物<br>
-泛化关系用一条带空心箭头的直接表示；<br>
-<font color="red">注：</font>最终代码中，泛化关系表现为继承非抽象类；</p>
+<p>1.mongo版本： Mongo 4.0.1</p>
 </li>
 <li>
-<p>2、实现关系(realize)<br>
-实现关系用一条带空心箭头的虚线表示；<br>
-eg：”车”为一个抽象概念，在现实中并无法直接用来定义对象；只有指明具体的子类(汽车还是自行车)，才 可以用来定义对象（”车”这个类在C++中用抽象类表示，在JAVA中有接口这个概念，更容易理解）<br>
-<font color="red">注：</font>最终代码中，实现关系表现为继承抽象类；</p>
+<p>2.索引</p>
+<ul>
+<li>
+<p>medical_examination_info  、 item_examination 、 collecting_sample 三个集合中都有以下索引</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.item_examination.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "item_id" : 1</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">db.collecting_sample.createIndex(&#123;</span><br><span class="line">    "institute_id" : 1,</span><br><span class="line">    "work_no" : 1,</span><br><span class="line">    "exam_item_id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="三-执行过程">三、执行过程</h3>
+<ul>
+<li>
+<p>直接执行时间</p>
+<ul>
+<li>29.6s</li>
+</ul>
 </li>
 <li>
-<p>3、聚合关系(aggregation)<br>
-聚合关系用一条带空心菱形箭头的直线表示，如下图表示A聚合到B上，或者说B由A组成；<br>
-聚合关系用于表示实体对象之间的关系，表示整体由部分构成的语义；例如一个部门由多个员工组成；<br>
-与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在；例如， 部门撤销了，人员不会消失，他们依然存在；</p>
+<p>将 institute_id 放在  exam_date 匹配后面，关联条件删除  institute_id执行时间</p>
+<ul>
+<li>很久很久…</li>
+</ul>
 </li>
 <li>
-<p>4、组合关系(composition)<br>
-组合关系用一条带实心菱形箭头直线表示，如下图表示A组成B，或者B由A组成；<br>
-与聚合关系一样，组合关系同样表示整体由部分构成的语义；比如公司由多个部门组成；<br>
-但组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分也不存在了；例如， 公司不存在了，部门也将不存在了；</p>
+<p>添加索引下面索引：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>29.5s</li>
+</ul>
 </li>
 <li>
-<p>5、关联关系(association)<br>
-关联关系是用一条直线表示的；它描述不同类的对象之间的结构关系；它是一种静态关系， 通常与运行状态无关，一般由常识等因素决定的；它一般用来定义对象之间静态的、天然的结构； 所以，关联关系是一种“强关联”的关系；<br>
-比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系；<br>
-关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示A知道B，但 B不知道A；<br>
-<font color="red">注：</font>在最终代码中，关联对象通常是以成员变量的形式实现的；</p>
+<p>添加下面索引：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.medical_examination_info.createIndex(&#123;</span><br><span class="line">  	"exam_date": -1,</span><br><span class="line">    "institute_id" : -1,</span><br><span class="line">    "work_no" : -1,</span><br><span class="line">    "examination_index.exam_items.id" : 1</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>30s</li>
+</ul>
 </li>
 <li>
-<p>6、依赖关系(dependency)<br>
-依赖关系是用一套带箭头的虚线表示的；如下图表示A依赖于B；他描述一个对象在运行期间会用到另一个对象的关系；<br>
-与关联关系不同的是，它是一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化；<br>
-显然，依赖也有方向，双向依赖是一种非常糟糕的结构，我们总是应该保持单向依赖，杜绝双向依赖的产生；<br>
-<font color="red">注：</font>在最终代码中，依赖关系体现为类构造方法及类方法的传入参数，箭头的指向为调用关系；依赖关系除了临时知道对方外，还是“使用”对方的方法和属性；</p>
+<p>单表查询（删除两个lookup）</p>
+<ul>
+<li>0.767s</li>
+</ul>
 </li>
+<li>
+<p>删除 lookup 的collecting_sample</p>
+<ul>
+<li>16s</li>
+</ul>
+</li>
+<li>
+<p>in改为or</p>
+<ul>
+<li>31.8s</li>
+</ul>
+</li>
+<li></li>
 </ul>
 
         </div>
@@ -468,9 +490,6 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/group/tags/面向对象/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<p>面向对象</p></a></div>
-
 
         
       
@@ -482,7 +501,7 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2017/08/01/others/class-relationship/&title=类与类之间的关系 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=在面向对象分析的过程中，我们常常会首先分析类与类之间有什么关系，然后设计出合理的类结构，尽量达到低耦合，高内聚。使得程序的可扩展性更高，下面简单的总结一下在面向对象的世界里类与类之间的关系。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2020/09/02/others/java/mongo查询优化/&title= | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
           
           >
           
@@ -494,7 +513,7 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2017/08/01/others/class-relationship/&title=类与类之间的关系 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=在面向对象分析的过程中，我们常常会首先分析类与类之间有什么关系，然后设计出合理的类结构，尽量达到低耦合，高内聚。使得程序的可扩展性更高，下面简单的总结一下在面向对象的世界里类与类之间的关系。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2020/09/02/others/java/mongo查询优化/&title= | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
           
           >
           
@@ -506,7 +525,7 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2017/08/01/others/class-relationship/&title=类与类之间的关系 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=在面向对象分析的过程中，我们常常会首先分析类与类之间有什么关系，然后设计出合理的类结构，尽量达到低耦合，高内聚。使得程序的可扩展性更高，下面简单的总结一下在面向对象的世界里类与类之间的关系。"
+          href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2020/09/02/others/java/mongo查询优化/&title= | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary="
           
           >
           
@@ -530,40 +549,21 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/blog/2017/08/09/others/魔鬼在细节中/" rel="prev" title="魔鬼在细节中">
-                                  
-                                      魔鬼在细节中
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/blog/group/tags/编码规范/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编码规范</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/blog/2017/07/07/others/life/20170707-七夕瞎写/" rel="prev" title="七夕瞎写">
+                                <a href="/blog/2020/09/02/others/rocketmq/1.0-20200902-RocketMq-基本概念/" rel="prev" title="RocketMq-基本概念">
                                     
-                                        七夕瞎写
+                                        RocketMq-基本概念
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/blog/group/tags/随记/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>随记</a>
+                                    <a class="tag" href="/blog/group/tags/并发/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>并发</a>
                                 </h6>
                             
                         </span>
@@ -606,7 +606,7 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
 
   <script>
     window.subData = {
-      title: '类与类之间的关系',
+      title: '',
       tools: true
     }
   </script>
@@ -676,6 +676,20 @@ eg：”车”为一个抽象概念，在现实中并无法直接用来定义对
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='[object Object]'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content [object Object]'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongo查询优化"><span class="toc-text">mongo查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-执行脚本"><span class="toc-text">一、执行脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-环境分析"><span class="toc-text">二、环境分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-执行过程"><span class="toc-text">三、执行过程</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
           
         
