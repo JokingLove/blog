@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jokinglove.com/blog/"/>
-  <updated>2020-09-02T08:27:44.575Z</updated>
+  <updated>2020-09-09T12:04:55.637Z</updated>
   <id>https://jokinglove.com/blog/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MongoDB-Springboot入门</title>
+    <link href="https://jokinglove.com/blog/2020/09/09/others/database/MongoDB%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+    <id>https://jokinglove.com/blog/2020/09/09/others/database/MongoDB快速入门/</id>
+    <published>2020-09-08T16:00:00.000Z</published>
+    <updated>2020-09-09T12:04:55.637Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="database" scheme="https://jokinglove.com/blog/group/categories/database/"/>
+    
+    
+      <category term="database,mongo,springboot" scheme="https://jokinglove.com/blog/group/tags/database-mongo-springboot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>1.0 RocketMq-基本概念</title>
     <link href="https://jokinglove.com/blog/2020/09/02/others/rocketmq/1.0-20200902-RocketMq-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
     <id>https://jokinglove.com/blog/2020/09/02/others/rocketmq/1.0-20200902-RocketMq-基本概念/</id>
     <published>2020-09-01T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.575Z</updated>
+    <updated>2020-09-02T08:31:47.344Z</updated>
     
     <summary type="html">
     
@@ -43,7 +69,7 @@
     <link href="https://jokinglove.com/blog/2020/08/02/others/java/CountDownLatch%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%94%A8%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2020/08/02/others/java/CountDownLatch的两种用法/</id>
     <published>2020-08-01T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.572Z</updated>
+    <updated>2020-09-02T08:31:47.340Z</updated>
     
     <summary type="html">
     
@@ -70,7 +96,7 @@
     <link href="https://jokinglove.com/blog/2020/07/12/others/database/Neo4j%20CQL/"/>
     <id>https://jokinglove.com/blog/2020/07/12/others/database/Neo4j CQL/</id>
     <published>2020-07-11T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.571Z</updated>
+    <updated>2020-09-02T08:31:47.339Z</updated>
     
     <summary type="html">
     
@@ -142,7 +168,7 @@
     <link href="https://jokinglove.com/blog/2020/01/02/others/linux/20200102-centos7%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/"/>
     <id>https://jokinglove.com/blog/2020/01/02/others/linux/20200102-centos7网络设置/</id>
     <published>2020-01-01T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.574Z</updated>
+    <updated>2020-09-02T08:31:47.342Z</updated>
     
     <summary type="html">
     
@@ -163,7 +189,7 @@
     <link href="https://jokinglove.com/blog/2019/12/31/others/microservice/20191231-zookeeper/"/>
     <id>https://jokinglove.com/blog/2019/12/31/others/microservice/20191231-zookeeper/</id>
     <published>2019-12-30T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.574Z</updated>
+    <updated>2020-09-02T08:31:47.343Z</updated>
     
     <summary type="html">
     
@@ -200,7 +226,7 @@
     <link href="https://jokinglove.com/blog/2019/09/13/others/java/20190913-java-spi/"/>
     <id>https://jokinglove.com/blog/2019/09/13/others/java/20190913-java-spi/</id>
     <published>2019-09-12T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.572Z</updated>
+    <updated>2020-09-02T08:31:47.339Z</updated>
     
     <summary type="html">
     
@@ -225,7 +251,7 @@
     <link href="https://jokinglove.com/blog/2019/08/07/others/20190807-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://jokinglove.com/blog/2019/08/07/others/20190807-正则表达式/</id>
     <published>2019-08-06T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.571Z</updated>
+    <updated>2020-09-02T08:31:47.338Z</updated>
     
     <summary type="html">
     
@@ -245,7 +271,7 @@
     <link href="https://jokinglove.com/blog/2019/07/10/others/20190617-webservice/"/>
     <id>https://jokinglove.com/blog/2019/07/10/others/20190617-webservice/</id>
     <published>2019-07-09T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.571Z</updated>
+    <updated>2020-09-02T08:31:47.337Z</updated>
     
     <summary type="html">
     
@@ -275,7 +301,7 @@
     <link href="https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/"/>
     <id>https://jokinglove.com/blog/2019/06/25/others/microservice/spring-boot-notice/</id>
     <published>2019-06-24T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.574Z</updated>
+    <updated>2020-09-02T08:31:47.343Z</updated>
     
     <summary type="html">
     
@@ -301,7 +327,7 @@
     <link href="https://jokinglove.com/blog/2019/06/14/kubernates/4.1%E5%88%9B%E5%BB%BAkubernetes%E9%9B%86%E7%BE%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/14/kubernates/4.1创建kubernetes集群/</id>
     <published>2019-06-13T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.336Z</updated>
     
     <summary type="html">
     
@@ -331,7 +357,7 @@
     <link href="https://jokinglove.com/blog/2019/06/12/kubernates/4.2%E6%93%8D%E4%BD%9C%E7%BB%83%E4%B9%A0/"/>
     <id>https://jokinglove.com/blog/2019/06/12/kubernates/4.2操作练习/</id>
     <published>2019-06-11T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.337Z</updated>
     
     <summary type="html">
     
@@ -355,7 +381,7 @@
     <link href="https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://jokinglove.com/blog/2019/06/11/others/linux/20190610-linux常用命令/</id>
     <published>2019-06-10T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.573Z</updated>
+    <updated>2020-09-02T08:31:47.341Z</updated>
     
     <summary type="html">
     
@@ -381,7 +407,7 @@
     <link href="https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97/"/>
     <id>https://jokinglove.com/blog/2019/06/10/kubernates/4.kubernetes的基础模块/</id>
     <published>2019-06-09T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.337Z</updated>
     
     <summary type="html">
     
@@ -423,7 +449,7 @@
     <link href="https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/"/>
     <id>https://jokinglove.com/blog/2019/06/02/kubernates/3.kubernetes-设计架构/</id>
     <published>2019-06-01T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.336Z</updated>
     
     <summary type="html">
     
@@ -448,7 +474,7 @@
     <link href="https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-%E8%AE%A4%E8%AF%86%20Kubernetes/"/>
     <id>https://jokinglove.com/blog/2019/05/31/kubernates/2.kubernetes-认识 Kubernetes/</id>
     <published>2019-05-30T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.336Z</updated>
     
     <summary type="html">
     
@@ -496,7 +522,7 @@
     <link href="https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-%E6%A6%82%E5%BF%B5/"/>
     <id>https://jokinglove.com/blog/2019/05/28/kubernates/1.kubernetes-概念/</id>
     <published>2019-05-27T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.570Z</updated>
+    <updated>2020-09-02T08:31:47.336Z</updated>
     
     <summary type="html">
     
@@ -525,7 +551,7 @@
     <link href="https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/"/>
     <id>https://jokinglove.com/blog/2019/05/19/others/kafka/20190612-kafka-introduction/</id>
     <published>2019-05-18T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.573Z</updated>
+    <updated>2020-09-02T08:31:47.340Z</updated>
     
     <summary type="html">
     
@@ -563,7 +589,7 @@
     <link href="https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     <id>https://jokinglove.com/blog/2019/05/17/others/database/20190624-mongo常用方法/</id>
     <published>2019-05-16T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.571Z</updated>
+    <updated>2020-09-02T08:31:47.338Z</updated>
     
     <summary type="html">
     
@@ -598,7 +624,7 @@
     <link href="https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/"/>
     <id>https://jokinglove.com/blog/2019/05/16/others/database/20190619-mongodb-reduce&amp;aggregate/</id>
     <published>2019-05-15T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.571Z</updated>
+    <updated>2020-09-02T08:31:47.338Z</updated>
     
     <summary type="html">
     
@@ -616,30 +642,6 @@
       <category term="Mongo" scheme="https://jokinglove.com/blog/group/tags/Mongo/"/>
     
       <category term="Database" scheme="https://jokinglove.com/blog/group/tags/Database/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown 常用语法汇总</title>
-    <link href="https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://jokinglove.com/blog/2019/05/15/others/tools/20190605-markdown常用语法/</id>
-    <published>2019-05-14T16:00:00.000Z</published>
-    <updated>2020-09-02T08:27:44.575Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;markdown-常用语法汇总&quot;&gt;markdown 常用语法汇总&lt;/h3&gt;
-&lt;p&gt;&lt;u&gt;这些字有下划线&lt;/u&gt;&lt;/p&gt;
-&lt;p&gt;我有上标&lt;sup&gt;上标&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;我有下标&lt;sub&gt;下标&lt;/sub&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;加粗1&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="上古神器" scheme="https://jokinglove.com/blog/group/categories/%E4%B8%8A%E5%8F%A4%E7%A5%9E%E5%99%A8/"/>
-    
-    
-      <category term="tools" scheme="https://jokinglove.com/blog/group/tags/tools/"/>
     
   </entry>
   
