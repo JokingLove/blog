@@ -20,7 +20,11 @@
       
         <tags>
             
-            <tag> database,mongo,springboot </tag>
+            <tag> database </tag>
+            
+            <tag> mongo </tag>
+            
+            <tag> springboot </tag>
             
         </tags>
       
@@ -230,9 +234,9 @@
       
         <tags>
             
-            <tag> IT </tag>
-            
             <tag> webservice </tag>
+            
+            <tag> IT </tag>
             
             <tag> java </tag>
             
@@ -612,9 +616,9 @@
             
             <tag> IT </tag>
             
-            <tag> 大数据 </tag>
-            
             <tag> springboot </tag>
+            
+            <tag> 大数据 </tag>
             
             <tag> ES </tag>
             
@@ -645,11 +649,11 @@
             
             <tag> IT </tag>
             
+            <tag> cat </tag>
+            
             <tag> 监控 </tag>
             
             <tag> microservice </tag>
-            
-            <tag> cat </tag>
             
         </tags>
       
@@ -676,11 +680,11 @@
             
             <tag> IT </tag>
             
-            <tag> promethus </tag>
-            
             <tag> 监控 </tag>
             
             <tag> microservice </tag>
+            
+            <tag> promethus </tag>
             
         </tags>
       
