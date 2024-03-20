@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>MongoDB-Springboot入门 | JOKING</title>
+  
+  <meta name="keywords" content="blog,joking,博客，programmer,jokinglove,JOKING,JOKINGLOVE,java,JAVASCRIPT">
+  
+  
+  <meta name="description" content="会当凌绝顶，一览众山小">
+  
+
+  
+  <link rel="alternate" href="/blog/atom.xml" title="JOKING" type="application/atom+xml">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/jquery.fancybox.min.css" /> -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/waves.min.css"> -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/all.min.css"> -->
+  
+
+  <!-- 
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/favicon.ico">
+   -->
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1eb8a2c234ac5bf6db839a19e3fbb5ee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+      console.log("baidu");  
+    })();
+    </script>
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        <div class="cover-content">
+
+  <h1 class='title'>JOKING</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/blog/"
+            
+            
+            id="blog">
+            <i class='fas fa-blog fa-fw'></i>&nbsp;博客
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/projects/"
+            
+              rel="nofollow"
+            
+            
+            id="blogprojects">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/friends/"
+            
+              rel="nofollow"
+            
+            
+            id="blogfriends">
+            <i class='fas fa-link fa-fw'></i>&nbsp;友链
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/blog/about/"
+            
+              rel="nofollow"
+            
+            
+            id="blogabout">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+</div>
+      
+    </cover>
+    <header class="l_header [object Object]">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="[object Object]"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo avatar flat-box" href='https://jokinglove.com' >
+        
+          JOKING
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/group/categories"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="bloggroupcategories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/group/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="bloggrouptags">
+									<i class='fas fa-tag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/archives"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="blogarchives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class='fas fa-click fa-fw fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogarchives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/projects/"
+                
+                
+                id="blogprojects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;开源项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogfriends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;我的友链
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" target="_blank" href="https://xaoxuu.com/wiki/material-x/"
+                
+                  rel="nofollow noopener"
+                
+                
+                id="https:xaoxuu.comwikimaterial-x">
+								<i class='fas fa-book fa-fw'></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="blogabout">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020/09/09/others/database/MongoDB%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+        MongoDB-Springboot入门
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://jokinglove.com/blog" rel="nofollow">
+      
+        <img src="https://avatars2.githubusercontent.com/u/18134074?s=460&v=4">
+      
+      <p>JOKING</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-09-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/group/categories/database/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>database</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h2 id="mongodb-springboot-入门">MongoDB-Springboot 入门</h2>
+<h3 id="一-mongodb简介">一、MongoDB简介</h3>
+<ul>
+<li>
+<p>MongoDB是一个由C++编写的，基于分布式文件存储的开源数据库系统。</p>
+</li>
+<li>
+<p>通过添加节点可以快速扩容，保证服务器性能。</p>
+</li>
+<li>
+<p>存储结构由键值（key, value）对组成。类似于 json 对象。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  name<span class="punctuation">:</span> <span class="string">&quot;jim&quot;</span><span class="punctuation">,</span></span><br><span class="line">  age<span class="punctuation">:</span> <span class="number">25</span><span class="punctuation">,</span></span><br><span class="line">  status<span class="punctuation">:</span> <span class="string">&quot;A&quot;</span><span class="punctuation">,</span></span><br><span class="line">  groups<span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;news&quot;</span><span class="punctuation">,</span> <span class="string">&quot;sports&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<span id="more"></span>
+<h3 id="二-基本概念">二、基本概念</h3>
+<blockquote>
+<p>Mongo是一个NoSQL 的文档数据库，可以对比 SQL  中的一些概念来理解。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">SQL术语/概念</th>
+<th style="text-align:left">MongoDB术语/概念</th>
+<th style="text-align:left">解释/说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">database</td>
+<td style="text-align:left">database</td>
+<td style="text-align:left">数据库</td>
+</tr>
+<tr>
+<td style="text-align:left">table</td>
+<td style="text-align:left">collection</td>
+<td style="text-align:left">数据库表/集合</td>
+</tr>
+<tr>
+<td style="text-align:left">row</td>
+<td style="text-align:left">document</td>
+<td style="text-align:left">数据记录行/文档</td>
+</tr>
+<tr>
+<td style="text-align:left">column</td>
+<td style="text-align:left">field</td>
+<td style="text-align:left">数据字段/域</td>
+</tr>
+<tr>
+<td style="text-align:left">index</td>
+<td style="text-align:left">index</td>
+<td style="text-align:left">索引</td>
+</tr>
+<tr>
+<td style="text-align:left">table joins</td>
+<td style="text-align:left">lookup</td>
+<td style="text-align:left">表关联</td>
+</tr>
+<tr>
+<td style="text-align:left">primary key</td>
+<td style="text-align:left">primary key</td>
+<td style="text-align:left">主键,MongoDB自动将_id字段设置为主键</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三-基础操作-增删改查">三、基础操作-增删改查</h3>
+<h4 id="1-新增">1、新增</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne"><code>db.collection.insertOne()</code></a><br>
+<a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/#db.collection.insertMany"><code>db.collection.insertMany()</code></a><br>
+<a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.insert/#db.collection.insert"><code>db.collection.insert()</code></a></p>
+</blockquote>
+<h4 id="2-修改">2、修改</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/#db.collection.updateOne"><code>db.collection.updateOne()</code></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/#db.collection.updateMany"><code>db.collection.updateMany()</code></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne"><code>db.collection.replaceOne()</code></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.update/#db.collection.update"><code>db.collection.update()</code></a></p>
+</blockquote>
+<p>db.person.update({name: ‘张三’}, {$set: {age: 30}}, {multi: true})</p>
+<p>db.person.update({name: ‘张三’}, {$set: {‘address.$[i].no’: 50}}, {arrayFilters: [{‘i.province’:  ‘上海’}]})</p>
+<p>update person set age = 30 where name = ‘张三’；</p>
+<h4 id="3-删除">3、删除</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/#db.collection.deleteOne"><code>db.collection.deleteOne()</code></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/#db.collection.deleteMany"><code>db.collection.deleteMany()</code></a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.remove/#db.collection.remove"><code>db.collection.remove()</code></a></p>
+</blockquote>
+<h4 id="4-查询">4、查询</h4>
+<ul>
+<li>find</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find"><code>db.collection.find()</code></a></p>
+</blockquote>
+<ul>
+<li>aggregate</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/v4.0/reference/method/db.collection.aggregate/#db.collection.aggregate"><code>db.collection.aggregate</code></a></p>
+</blockquote>
+<h2 id="springboot-mongo">Springboot-mongo</h2>
+<h3 id="1-引入依赖">1、引入依赖</h3>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-mongodb<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-配置mongo客户端">2、配置mongo客户端</h3>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring.data.mongodb.uri</span>=<span class="string">mongodb://MEDBUser:MEDBUser@172.172.172.172:20000,172.172.172.173:20000,172.172.172.174:20000/MedicalExaminationDB4</span></span><br><span class="line"><span class="comment"># 或者以下</span></span><br><span class="line"><span class="attr">spring.data.mongodb.host</span>=<span class="string">mongoserver.example.com</span></span><br><span class="line"><span class="attr">spring.data.mongodb.port</span>=<span class="string">27017</span></span><br><span class="line"><span class="attr">spring.data.mongodb.database</span>=<span class="string">test</span></span><br><span class="line"><span class="attr">spring.data.mongodb.username</span>=<span class="string">user</span></span><br><span class="line"><span class="attr">spring.data.mongodb.password</span>=<span class="string">secret</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-配置连接池-两种方式都可以-第二种有优先级更高">3、配置连接池（两种方式都可以，第二种有优先级更高）</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joking.springbootmongo.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mongodb.MongoClientSettings;</span><br><span class="line"><span class="keyword">import</span> org.bson.codecs.configuration.CodecRegistry;</span><br><span class="line"><span class="keyword">import</span> org.bson.codecs.pojo.PojoCodecProvider;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.mongo.MongoClientSettingsBuilderCustomizer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.MongoClientSettingsFactoryBean;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.bson.codecs.configuration.CodecRegistries.fromProviders;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.bson.codecs.configuration.CodecRegistries.fromRegistries;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MongoConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MongoClientSettingsFactoryBean <span class="title function_">mongoClientSettingsFactoryBean</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">MongoClientSettingsFactoryBean</span> <span class="variable">factoryBean</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MongoClientSettingsFactoryBean</span>();</span><br><span class="line">        factoryBean.setPoolMaxConnectionIdleTimeMS(<span class="number">5000</span>);</span><br><span class="line">        factoryBean.setPoolMaxSize(<span class="number">100</span>);</span><br><span class="line">        factoryBean.setPoolMinSize(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">return</span> factoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MongoClientSettingsBuilderCustomizer <span class="title function_">mongoClientSettingsBuilderCustomizer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">MongoClientSettingsBuilderCustomizer</span> <span class="variable">builder</span> <span class="operator">=</span> clientSettingsBuilder -&gt; &#123;</span><br><span class="line">            clientSettingsBuilder.applyToConnectionPoolSettings(settings -&gt; &#123;</span><br><span class="line">                settings.maxConnectionIdleTime(<span class="number">1000</span>, TimeUnit.SECONDS);</span><br><span class="line">                settings.maxSize(<span class="number">100</span>);</span><br><span class="line">                settings.minSize(<span class="number">3</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">            clientSettingsBuilder.codecRegistry(<span class="built_in">this</span>.codecRegistry());</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> builder;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> CodecRegistry <span class="title function_">codecRegistry</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),</span><br><span class="line">                fromProviders(PojoCodecProvider.builder().automatic(<span class="literal">true</span>).build()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="4-测试">4、测试</h3>
+<ul>
+<li>
+<p>entity</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joking.springbootmongo.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.AllArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.NoArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.ToString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Address&gt; address;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Data</span></span><br><span class="line">    <span class="meta">@ToString</span></span><br><span class="line">    <span class="meta">@AllArgsConstructor</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Address</span> &#123;</span><br><span class="line">        <span class="keyword">private</span> String province;</span><br><span class="line">        <span class="keyword">private</span> String city;</span><br><span class="line">        <span class="keyword">private</span> String street;</span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> no;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>repository</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joking.springbootmongo.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.joking.springbootmongo.entity.Person;</span><br><span class="line"><span class="keyword">import</span> org.bson.types.ObjectId;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.repository.MongoRepository;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">PersonRepository</span> <span class="keyword">extends</span> <span class="title class_">MongoRepository</span>&lt;Person, ObjectId&gt; &#123;</span><br><span class="line"></span><br><span class="line">    Optional&lt;List&lt;Person&gt;&gt; <span class="title function_">findByName</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line">    Optional&lt;List&lt;Person&gt;&gt; <span class="title function_">findByAddressProvince</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line">    Optional&lt;List&lt;Person&gt;&gt; <span class="title function_">findByNameRegex</span><span class="params">(String name)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>JunitTest</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joking.springbootmongo.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.joking.springbootmongo.entity.Person;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.mongodb.core.MongoTemplate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.util.Arrays.asList;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PersonRepositoryTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> PersonRepository personRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> MongoTemplate mongoTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testSave</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        person.setName(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        person.setAge(<span class="number">10</span>);</span><br><span class="line">        person.setAddress(</span><br><span class="line">                asList(</span><br><span class="line">                        <span class="keyword">new</span> <span class="title class_">Person</span>.Address(<span class="string">&quot;北京&quot;</span>, <span class="string">&quot;海淀&quot;</span>, <span class="string">&quot;建外&quot;</span>, <span class="number">10</span>)</span><br><span class="line">                )</span><br><span class="line">        );</span><br><span class="line">        <span class="type">Person</span> <span class="variable">save</span> <span class="operator">=</span> personRepository.save(person);</span><br><span class="line">        log.info(save.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">findByNameTest</span><span class="params">()</span> &#123;</span><br><span class="line">        personRepository.findByName(<span class="string">&quot;张三&quot;</span>)</span><br><span class="line">                .ifPresent(i -&gt; &#123;</span><br><span class="line">                    i.forEach(j -&gt; log.info(j.toString()));</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">findByAddressProvinceTest</span><span class="params">()</span> &#123;</span><br><span class="line">        personRepository.findByAddressProvince(<span class="string">&quot;北京&quot;</span>)</span><br><span class="line">                .ifPresent(i -&gt; &#123;</span><br><span class="line">                    i.forEach(j -&gt; log.info(j.toString()));</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">findByNameRegexTest</span><span class="params">()</span> &#123;</span><br><span class="line">        personRepository.findByNameRegex(<span class="string">&quot;三&quot;</span>)</span><br><span class="line">                .ifPresent(i -&gt; &#123;</span><br><span class="line">                    i.forEach(j -&gt; log.info(j.toString()));</span><br><span class="line">                &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2024-03-20T16:45:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2024年3月20日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/group/tags/database/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<p>database</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/group/tags/mongo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<p>mongo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/group/tags/springboot/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<p>springboot</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jokinglove.com/blog/2020/09/09/others/database/MongoDB%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/&title=MongoDB-Springboot入门 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=MongoDB-Springboot 入门
+一、MongoDB简介
+
+
+MongoDB是一个由C++编写的，基于分布式文件存储的开源数据库系统。
+
+
+通过添加节点可以快速扩容，保证服务器性能。
+
+
+存储结构由键值（key, value）对组成。类似于 json 对象。
+123456&#123;  name: &quot;jim&quot;,  age: 25,  status: &quot;A&quot;,  groups: [&quot;news&quot;, &quot;sports&quot;]&#125;
+
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jokinglove.com/blog/2020/09/09/others/database/MongoDB%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/&title=MongoDB-Springboot入门 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=MongoDB-Springboot 入门
+一、MongoDB简介
+
+
+MongoDB是一个由C++编写的，基于分布式文件存储的开源数据库系统。
+
+
+通过添加节点可以快速扩容，保证服务器性能。
+
+
+存储结构由键值（key, value）对组成。类似于 json 对象。
+123456&#123;  name: &quot;jim&quot;,  age: 25,  status: &quot;A&quot;,  groups: [&quot;news&quot;, &quot;sports&quot;]&#125;
+
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jokinglove.com/blog/2020/09/09/others/database/MongoDB%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/&title=MongoDB-Springboot入门 | JOKING&pics=https://avatars2.githubusercontent.com/u/18134074?s=460&v=4&summary=MongoDB-Springboot 入门
+一、MongoDB简介
+
+
+MongoDB是一个由C++编写的，基于分布式文件存储的开源数据库系统。
+
+
+通过添加节点可以快速扩容，保证服务器性能。
+
+
+存储结构由键值（key, value）对组成。类似于 json 对象。
+123456&#123;  name: &quot;jim&quot;,  age: 25,  status: &quot;A&quot;,  groups: [&quot;news&quot;, &quot;sports&quot;]&#125;
+
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/blog/2020/09/02/others/rocketmq/1.0-20200902-RocketMq-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="prev" title="1.0 RocketMq-基本概念">
+                                    
+                                        1.0 RocketMq-基本概念
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/blog/group/tags/%E5%B9%B6%E5%8F%91/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>并发</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'MongoDB-Springboot入门',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content [object Object]'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://avatars2.githubusercontent.com/u/18134074?s=460&v=4'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:jokinglove@foxmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/JokingLove"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=119738075"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='[object Object]'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content [object Object]'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb-springboot-%E5%85%A5%E9%97%A8"><span class="toc-text">MongoDB-Springboot 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-mongodb%E7%AE%80%E4%BB%8B"><span class="toc-text">一、MongoDB简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">二、基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">三、基础操作-增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%96%B0%E5%A2%9E"><span class="toc-text">1、新增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9"><span class="toc-text">2、修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4"><span class="toc-text">3、删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%9F%A5%E8%AF%A2"><span class="toc-text">4、查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#springboot-mongo"><span class="toc-text">Springboot-mongo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-text">1、引入依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEmongo%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">2、配置mongo客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E6%B1%A0-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E9%83%BD%E5%8F%AF%E4%BB%A5-%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%9C%89%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98"><span class="toc-text">3、配置连接池（两种方式都可以，第二种有优先级更高）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95"><span class="toc-text">4、测试</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='[object Object]'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content [object Object]'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/blog/" href="/blog/"
+          
+          
+          id="blog">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="blogarchives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/projects/" href="/blog/projects/"
+          
+          
+          id="blogprojects">
+          
+            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
+          
+          开源项目
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/friends/" href="/blog/friends/"
+          
+            rel="nofollow"
+          
+          
+          id="blogfriends">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          我的友链
+        </a></li>
+      
+        <li><a class="flat-box" title="https://xaoxuu.com/wiki/material-x/" href="https://xaoxuu.com/wiki/material-x/"
+          
+            rel="nofollow"
+          
+          
+            target="_blank"
+          
+          id="https:xaoxuu.comwikimaterial-x">
+          
+            <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+          
+          主题文档
+        </a></li>
+      
+        <li><a class="flat-box" title="/blog/about/" href="/blog/about/"
+          
+            rel="nofollow"
+          
+          
+          id="blogabout">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='[object Object]'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;云标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content [object Object]'>
+      <a href="/blog/group/tags/1024/" style="font-size: 14px; color: #999">1024</a> <a href="/blog/group/tags/Database/" style="font-size: 18px; color: #7e7e7e">Database</a> <a href="/blog/group/tags/ES/" style="font-size: 14px; color: #999">ES</a> <a href="/blog/group/tags/IT/" style="font-size: 24px; color: #555">IT</a> <a href="/blog/group/tags/Kafka/" style="font-size: 16px; color: #8b8b8b">Kafka</a> <a href="/blog/group/tags/Mongo/" style="font-size: 16px; color: #8b8b8b">Mongo</a> <a href="/blog/group/tags/SPI/" style="font-size: 14px; color: #999">SPI</a> <a href="/blog/group/tags/cat/" style="font-size: 14px; color: #999">cat</a> <a href="/blog/group/tags/database/" style="font-size: 14px; color: #999">database</a> <a href="/blog/group/tags/git/" style="font-size: 16px; color: #8b8b8b">git</a> <a href="/blog/group/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/blog/group/tags/java/" style="font-size: 18px; color: #7e7e7e">java</a> <a href="/blog/group/tags/kubernetes/" style="font-size: 22px; color: #636363">kubernetes</a> <a href="/blog/group/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/blog/group/tags/maven/" style="font-size: 16px; color: #8b8b8b">maven</a> <a href="/blog/group/tags/microservice/" style="font-size: 16px; color: #8b8b8b">microservice</a> <a href="/blog/group/tags/mongo/" style="font-size: 14px; color: #999">mongo</a> <a href="/blog/group/tags/promethus/" style="font-size: 14px; color: #999">promethus</a> <a href="/blog/group/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/blog/group/tags/spring/" style="font-size: 14px; color: #999">spring</a> <a href="/blog/group/tags/spring-boot/" style="font-size: 14px; color: #999">spring-boot</a> <a href="/blog/group/tags/springboot/" style="font-size: 18px; color: #7e7e7e">springboot</a> <a href="/blog/group/tags/tools/" style="font-size: 16px; color: #8b8b8b">tools</a> <a href="/blog/group/tags/webservice/" style="font-size: 14px; color: #999">webservice</a> <a href="/blog/group/tags/zookeeper/" style="font-size: 14px; color: #999">zookeeper</a> <a href="/blog/group/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 14px; color: #999">多线程</a> <a href="/blog/group/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" style="font-size: 20px; color: #707070">大数据</a> <a href="/blog/group/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 14px; color: #999">并发</a> <a href="/blog/group/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 14px; color: #999">搜索</a> <a href="/blog/group/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 16px; color: #8b8b8b">监控</a> <a href="/blog/group/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 14px; color: #999">编码规范</a> <a href="/blog/group/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a> <a href="/blog/group/tags/%E9%9A%8F%E8%AE%B0/" style="font-size: 16px; color: #8b8b8b">随记</a> <a href="/blog/group/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 14px; color: #999">集群</a> <a href="/blog/group/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 14px; color: #999">面向对象</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='[object Object]'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/playlist?id=148418651"
+    title="https://music.163.com/#/playlist?id=148418651">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content [object Object]'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/APlayer.min.css"> -->
+  <div class="aplayer"
+    data-theme="#f99806"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="119738075"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Hello World!</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/blog/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:jokinglove@foxmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/JokingLove"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=119738075"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <!-- <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div> -->
+  <div>
+    <!-- 驱动 -->
+    <p>本站由<a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a>强力驱动 🔥 使用 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material-x</a> 作为主题</p>
+
+    <!-- <a href="" target="_blank" class="codename">hexo</a> -->
+    <!-- 使用
+    <a href="" target="_blank" class="codename">Material X</a>
+    作为主题 -->
+    
+      <!-- ， -->
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="//cdn.jsdelivr.net/npm/busuanzi@2.3.0"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+        // 修复加了 particles 粒子效果后， cover 挡住了一些元素的问题
+        document.querySelector('.cover').style.zIndex=''
+      });
+    </script>
+  
+
+
+
+
+
+
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+  <!-- <link rel="stylesheet" href="https://jokinglove.com/blog/css/gitalk.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@2.0.1/dist/gitalk.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/gh/jokinglove/gitalk@2.0.1/dist/gitalk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+  <!-- <script src="../js/gitalk.min.js"></script> -->
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "Iv1.4968518393d3b9f1",
+      clientSecret: "ad03ce244f26e942defd4a4918834ac65333a981",
+      repo: "site_comments",
+      owner: "JokingLove",
+      admin: "JokingLove",
+      
+        id: location.pathname.length >= 50 ? md5(location.pathname) : location.pathname,      // Ensure uniqueness and length less than 50
+      
+      // distractionFreeMode: true,  // Facebook-like distraction free mode
+      flipMoveOptions: {
+        staggerDelayBy: 150,
+        appearAnimation: 'accordionVertical',
+        enterAnimation: 'fade',
+        leaveAnimation: 'fade',
+      },
+      language: 'zh-CN', 
+      pagerDirection: 'last',
+      enableHotKey: true, // cmd | ctrl + enter
+      
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+<!-- 粒子效果 -->
+
+  <div id="particles"></div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles', 'https://jokinglove.com/blog/js/particles.json', function() {
+      console.log('callback - particles.js config loaded');
+    });
+  </script>
+
+<!-- 实现图片放大查看 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.3.6/dist/viewer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/viewerjs@1.3.6/dist/viewer.min.js"></script>
+<script>
+function filterATag(dom) {
+  if(!dom) return false;
+  var currDom = dom;
+  while(true) {
+    if(currDom.nodeName == 'BODY') return true;
+    if(currDom.nodeName == 'A') return false;
+    currDom = currDom.parentNode;
+  }
+}
+window.addEventListener('DOMContentLoaded', function () {
+  var imgtags = Array.from(document.getElementsByTagName('img'));
+  // 如果外面有 a 标签，则不让预览了
+  (imgtags || []).filter(filterATag).forEach((imgTag) => {
+    // 鼠标移上去事件
+    imgTag.addEventListener('mouseover', function(e) {
+      e.target.title = '点击查看大图'
+      e.target.style.cursor = 'pointer'
+    })
+    // click 事件
+    imgTag.addEventListener('click', function (e) {
+    var image = new Image();
+    image.src = e.target.currentSrc;
+    var viewer = new Viewer(image, {
+      hidden: function () {
+        viewer.destroy();
+      }
+    });
+    // image.click();
+    viewer.show();
+    });
+  });
+})
+</script>
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
